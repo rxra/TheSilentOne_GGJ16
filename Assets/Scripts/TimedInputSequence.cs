@@ -16,6 +16,7 @@ public class TimedInputSequence : MonoBehaviour {
     public Type type = Type.Any;
     public float epsilon = 0.2f;
     public float[] steps;
+    public GameManager.SuccessType success;
     
     private bool _started = false;
     private int _step = 0;
@@ -47,6 +48,7 @@ public class TimedInputSequence : MonoBehaviour {
                    _step++;
                    if (_step==steps.Length) {
                        _started = false;
+                       manager.Success(success);
                        gameObject.SetActive(false);
                    } else {
                        _elapsedTimeStep = 0;
