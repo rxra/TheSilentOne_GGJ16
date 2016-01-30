@@ -28,25 +28,24 @@ public class TestWebCam : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	}
-	
-    void OnEnable() {
-        _firstAverage = false;
-       _startTime = Time.time;
-        _totalElapsedTime = 0;
-        foreach(var wcam in WebCamTexture.devices) {
+        foreach (var wcam in WebCamTexture.devices)
+        {
             _deviceName = wcam.name;
             _webcam = new WebCamTexture(_deviceName, 128, 72);
             rendererForCamera.material.mainTexture = _webcam;
             _webcam.Play();
             _elapsedTime = 0;
-            break;      
+            break;
         }
     }
-
-    void OnDisable() {
-        _webcam.Stop();
-        _webcam = null;
+	
+    void OnEnable()
+    {
+        _elapsedTime = 0;
+        _firstAverage = false;
+       _startTime = Time.time;
+        _totalElapsedTime = 0;
+        
     }
 
 	void Update () {
@@ -89,7 +88,9 @@ public class TestWebCam : MonoBehaviour {
                _average++;
                if (_average==averageCount) {
                    Debug.Log("OK: CameraMove");
-                  gameObject.SetActive(false);
+                    _webcam.Stop();
+                    _webcam = null;
+                    gameObject.SetActive(false);
                   manager.Success(success);   
                }
            }

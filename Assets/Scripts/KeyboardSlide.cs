@@ -23,10 +23,9 @@ public class KeyboardSlide : MonoBehaviour {
 	   if(Input.anyKeyDown) {
            _letters += Input.inputString.ToUpper();
            Debug.Log(Input.inputString);
-           Debug.Log(startLetter.ToString().ToUpper());
            if ( _letters[0].ToString()==startLetter.ToString() && 
                 _letters[_letters.Length-1].ToString()==endLetter.ToString() && 
-                _letters.Length>letterCount) {
+                _letters.Length>=letterCount) {
                 Debug.Log("OK: " + _letters);
                 gameObject.SetActive(false);
                 manager.Success(success);
@@ -34,7 +33,7 @@ public class KeyboardSlide : MonoBehaviour {
        }
 
        if ((Time.time - _startTime) > timeout) {
-           Debug.Log("timeout FAILED (" + (Time.time - _startTime) + ")");
+           Debug.Log("timeout FAILED (" + (Time.time - _startTime) + ") "+_letters);
            manager.Failed(GameManager.FailType.TooLong);
            gameObject.SetActive(false);
        }
