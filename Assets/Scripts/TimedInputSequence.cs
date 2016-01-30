@@ -32,10 +32,11 @@ public class TimedInputSequence : MonoBehaviour {
 	   _started = false;
        foreach(var step in steps) {
            _totalTime += step;
+           _totalTime += epsilon;
        }
        _startTime = Time.time;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         
@@ -68,6 +69,8 @@ public class TimedInputSequence : MonoBehaviour {
            if (_totalElapsedTime > (_totalTime + epsilon)) {
                Debug.Log("TOTAL TIME FAILED (" + _totalElapsedTime + " " + _totalTime + ")");               
                _started = false;
+               manager.Failed(fail);
+               gameObject.SetActive(false);
            }
        } else if ((Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
