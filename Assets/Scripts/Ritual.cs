@@ -6,7 +6,7 @@ public class Ritual : MonoBehaviour {
     public GameManager manager;
     public int successCount = 1;
     public float timeout = 20;
-    public GameObject[] checkers; 
+    public MonoBehaviour[] checkers; 
     
     private float _startTime;
     private int _success = 0;
@@ -19,8 +19,8 @@ public class Ritual : MonoBehaviour {
             manager.Success(success);
            gameObject.SetActive(false);
         } else {
-            checkers[_success-1].SetActive(false);
-            checkers[_success].SetActive(true);
+            checkers[_success-1].enabled = false;
+            checkers[_success].enabled = true;
         }
     }
 
@@ -35,9 +35,9 @@ public class Ritual : MonoBehaviour {
 	   _startTime = Time.time;
        _success = 0;
        foreach(var go in checkers) {
-           go.SetActive(false);
+           go.enabled = false;
        }
-       checkers[0].SetActive(true);
+       checkers[0].enabled = true;
 	}
 	
 	// Update is called once per frame
