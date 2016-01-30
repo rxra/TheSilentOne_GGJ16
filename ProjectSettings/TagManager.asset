@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Mask
-  - 
+  - Puppet2DLock
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Character
+    uniqueID: 2272029049
+    locked: 0
+  - name: Background
+    uniqueID: 184153119
+    locked: 0
+  - name: PuppetBones
+    uniqueID: 2068807289
+    locked: 0
+  - name: PuppetRigs
+    uniqueID: 4027557133
     locked: 0
