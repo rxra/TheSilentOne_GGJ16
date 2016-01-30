@@ -7,6 +7,8 @@ public class TestWebCam : MonoBehaviour {
     public float checkTimer = 1;
     public Color32 darkTolerance = new Color32(40,5,5,0);
     public GameManager.SuccessType success;
+    public float inactivityTimeout = 5;
+    public bool hidden = true;
 
     private string _deviceName;
     private Color32[] _data;
@@ -14,23 +16,33 @@ public class TestWebCam : MonoBehaviour {
     private float _elapsedTime = 0;
     private bool _initialized = false;
     private bool _hidden = false;
+    private float _totalElapsedTime = 0;
+    private float _startTime = 0;
 
     public GameManager manager;
 
     // Use this for initialization
     void Start () {
+	}
+	
+    void OnEnable() {
+       _startTime = Time.time;
+        _totalElapsedTime = 0;
         foreach(var wcam in WebCamTexture.devices) {
             _deviceName = wcam.name;
             _webcam = new WebCamTexture(_deviceName, 128, 72);
             rendererForCamera.material.mainTexture = _webcam;
             _webcam.Play();
             _elapsedTime = 0;
-            break;            
+            break;      
         }
+    }
 
-	}
-	
-	// Update is called once per frame
+    void OnDisable() {
+        _webcam.Pause();
+        _webcam = null;
+    }
+
 	void Update () {
         if (!_initialized && _webcam.didUpdateThisFrame) {
             _data = new Color32[_webcam.width * _webcam.height];
@@ -41,16 +53,34 @@ public class TestWebCam : MonoBehaviour {
             if (_webcam.didUpdateThisFrame && _elapsedTime>checkTimer) {
                 _elapsedTime = 0;
                 _webcam.GetPixels32(_data);
-                if (!_hidden && isWebcamHidden()) {
-                    _hidden = true;
-                    Debug.Log("OK: Hidden");
-                    gameObject.SetActive(false);
-                    manager.Success(success);
-                } else if (_hidden && !isWebcamHidden()) {
-                    _hidden = false;
-                    Debug.Log("ok");
+                if (hidden) {
+                    CheckHidden();                    
+                } else {
+                    CheckCameraMove();
                 }
             }
+        }
+        if ((Time.time - _startTime) > inactivityTimeout) {
+           Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
+           manager.Failed(GameManager.FailType.TooLong);
+           gameObject.SetActive(false);
+       }
+    }
+    
+    private void CheckCameraMove()
+    {
+    }
+    
+    private void CheckHidden()
+    {
+        if (!_hidden && isWebcamHidden()) {
+            _hidden = true;
+            Debug.Log("OK: Hidden");
+            gameObject.SetActive(false);
+            manager.Success(success);
+        } else if (_hidden && !isWebcamHidden()) {
+            _hidden = false;
+            Debug.Log("ok");
         }
     }
     
