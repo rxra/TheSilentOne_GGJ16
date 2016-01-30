@@ -45,7 +45,7 @@ public class TestWebCam : MonoBehaviour {
     }
 
     void OnDisable() {
-        _webcam.Pause();
+        _webcam.Stop();
         _webcam = null;
     }
 
