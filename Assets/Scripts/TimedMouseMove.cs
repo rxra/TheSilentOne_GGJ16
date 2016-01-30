@@ -24,9 +24,11 @@ public class TimedMouseMove : MonoBehaviour {
 	}
 	
     void OnEnable() {
+	   _lasPosition = Input.mousePosition;
 	   _started = false;
        _startTime = Time.time;
        _elapsedTime = 0;
+       _length = 0;
     }
 
 	// Update is called once per frame
