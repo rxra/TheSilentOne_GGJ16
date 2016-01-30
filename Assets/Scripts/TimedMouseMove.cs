@@ -7,7 +7,6 @@ public class TimedMouseMove : MonoBehaviour {
     public float distance = 200;
     public float duration = 5;
     public GameManager.SuccessType success;
-    public GameManager.FailType fail;
     public float inactivityTimeout = 5;
     
     private Vector3 _lasPosition;
@@ -53,12 +52,12 @@ public class TimedMouseMove : MonoBehaviour {
            } else if (_elapsedTime>duration) {
                Debug.Log("FAILED: " + _length + " " + _elapsedTime);
                 gameObject.SetActive(false);
-                manager.Failed(fail);
+                manager.Failed(GameManager.FailType.Error);
            }
        } else if ((Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
            _started = false;
-           manager.Failed(fail);
+           manager.Failed(GameManager.FailType.TooLong);
            gameObject.SetActive(false);
        }
 	}
