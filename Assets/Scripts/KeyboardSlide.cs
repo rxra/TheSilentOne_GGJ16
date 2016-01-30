@@ -21,7 +21,7 @@ public class KeyboardSlide : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	   if(Input.anyKeyDown) {
+	   if(Input.anyKeyDown && !Input.GetMouseButton(0) && !Input.GetMouseButton(1)) {
            _letters += Input.inputString.ToUpper();
            Debug.Log(Input.inputString);
            if ( _letters[0].ToString()==startLetter.ToString() && 
