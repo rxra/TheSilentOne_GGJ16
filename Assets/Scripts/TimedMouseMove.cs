@@ -4,6 +4,7 @@ using System.Collections;
 public class TimedMouseMove : MonoBehaviour {
 
     public GameManager manager;
+    public Ritual ritual;
     public float distance = 200;
     public float duration = 5;
     public GameManager.SuccessType success;
@@ -46,18 +47,27 @@ public class TimedMouseMove : MonoBehaviour {
            
            if (_length>=distance) {
                Debug.Log("OK: " + _length + " " + _elapsedTime);
-                gameObject.SetActive(false);
-                manager.Success(success);
+                if (manager!=null) {
+                    gameObject.SetActive(false);
+                    manager.Success(success);
+                } else
+                    ritual.Success(success);
            } else if (_elapsedTime>duration) {
                Debug.Log("FAILED: " + _length + " " + _elapsedTime);
-                gameObject.SetActive(false);
-                manager.Failed(GameManager.FailType.Error);
+                if (manager!=null) {
+                    gameObject.SetActive(false);
+                    manager.Failed(GameManager.FailType.Error);
+                } else
+                    ritual.Failed(GameManager.FailType.Error);
            }
        } else if ((Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
            _started = false;
-           manager.Failed(GameManager.FailType.TooLong);
-           gameObject.SetActive(false);
+           if (manager!=null) {
+                manager.Failed(GameManager.FailType.TooLong);
+               gameObject.SetActive(false);
+           } else
+                ritual.Failed(GameManager.FailType.TooLong);
        }
 	}
 }

@@ -21,6 +21,7 @@ public class TestWebCam : MonoBehaviour {
     private int _average = 0;
 
     public GameManager manager;
+    public Ritual ritual;
 
     // Use this for initialization
     void Start () {
@@ -53,8 +54,11 @@ public class TestWebCam : MonoBehaviour {
         }
         if ((Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
-           manager.Failed(GameManager.FailType.TooLong);
-           gameObject.SetActive(false);
+           if (manager!=null) {
+               manager.Failed(GameManager.FailType.TooLong);
+               gameObject.SetActive(false);
+           } else
+               ritual.Failed(GameManager.FailType.TooLong);
        }
     }
     
@@ -74,8 +78,11 @@ public class TestWebCam : MonoBehaviour {
                _average++;
                if (_average==averageCount) {
                    Debug.Log("OK: CameraMove");
-                    gameObject.SetActive(false);
-                  manager.Success(success);   
+                    if (manager!=null) {
+                        gameObject.SetActive(false);
+                        manager.Success(success); 
+                    } else
+                        ritual.Success(success);  
                }
            }
         } else {
@@ -89,8 +96,12 @@ public class TestWebCam : MonoBehaviour {
         if (!_hidden && isWebcamHidden()) {
             _hidden = true;
             Debug.Log("OK: Hidden");
-            gameObject.SetActive(false);
-            manager.Success(success);
+            if (manager!=null) {
+                gameObject.SetActive(false);
+                manager.Success(success);
+            }
+            else
+                ritual.Success(success);
         } else if (_hidden && !isWebcamHidden()) {
             _hidden = false;
             Debug.Log("ok");
