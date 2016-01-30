@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
         if (_step>=triggers.Length) {
             Debug.Log("finished");
         }
-        else
+        else if (_step<triggers.Length)
         {
             GetComponent<AudioSource>().PlayOneShot(winSFX);
             StartCoroutine(WaitAndSetTrigger(winSFX.length));
@@ -37,23 +37,28 @@ public class GameManager : MonoBehaviour {
     public void Failed(FailType type)
     {
         Debug.Log("Failed: " + type);
-        switch (type)
+        if (_step<triggers.Length)
         {
-            case FailType.Error:
-                GetComponent<AudioSource>().PlayOneShot(failSFX);
-                StartCoroutine(WaitAndSetTrigger(failSFX.length));
-                break;
+            switch (type)
+            {
+                case FailType.Error:
+                    GetComponent<AudioSource>().PlayOneShot(failSFX);
+                    StartCoroutine(WaitAndSetTrigger(failSFX.length));
+                    break;
 
-            case FailType.TooLong:
-                _anim.SetTrigger(triggers[_step]);
-                break;
+                case FailType.TooLong:
+                    _anim.SetTrigger(triggers[_step]);
+                    break;
+            }
         }
     }
     
 	// Use this for initialization
 	void Start () {
 	   _anim = GetComponent<Animator>();
-       _anim.SetTrigger(triggers[_step]);
+       if (triggers.Length>0) {
+           _anim.SetTrigger(triggers[_step]);           
+       }
 	}
 	
 	// Update is called once per frame

@@ -18,24 +18,25 @@ public class TimedInputSequence : MonoBehaviour {
     public float[] steps;
     public GameManager.SuccessType success;
     public GameManager.FailType fail;
+    public float inactivityTimeout = 5;
     
     private bool _started = false;
     private int _step = 0;
     private float _elapsedTimeStep = 0;
     private float _totalTime = 0;
     private float _totalElapsedTime = 0;
+    private float _startTime = 0;
+    
+	// Use this for initialization
+	void Start () {
+	   _started = false;
+       foreach(var step in steps) {
+           _totalTime += step;
+           _totalTime += epsilon;
+       }
+       _startTime = Time.time;
+	}
 
-    // Use this for initialization
-    void Start()
-    {
-        _started = false;
-        foreach (var step in steps)
-        {
-            _totalTime += step;
-            _totalTime += epsilon;
-        }
-    }
-	
 	// Update is called once per frame
 	void Update () {
         
@@ -68,7 +69,14 @@ public class TimedInputSequence : MonoBehaviour {
            if (_totalElapsedTime > (_totalTime + epsilon)) {
                Debug.Log("TOTAL TIME FAILED (" + _totalElapsedTime + " " + _totalTime + ")");               
                _started = false;
+               manager.Failed(fail);
+               gameObject.SetActive(false);
            }
+       } else if ((Time.time - _startTime) > inactivityTimeout) {
+           Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
+           _started = false;
+           manager.Failed(fail);
+           gameObject.SetActive(false);
        }
 	}
     
