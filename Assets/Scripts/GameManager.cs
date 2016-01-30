@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour {
     public AudioClip winSFX;
     public AudioClip gameOverSFX;
     public AudioClip failSFX;
+    public Character character;
 
     public void Success(SuccessType type)
     {
