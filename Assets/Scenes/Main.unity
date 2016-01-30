@@ -421,6 +421,7 @@ MonoBehaviour:
   - Sequence4
   - Sequence5
   - Sequence6
+  - Sequence7
   winSFX: {fileID: 8300000, guid: 0ba11329587f22542a9bebae75faa618, type: 3}
   failSFX: {fileID: 8300000, guid: 1b57390ba40e81e43a25c8c080a5adb8, type: 3}
 --- !u!95 &463419757
@@ -460,6 +461,7 @@ Transform:
   - {fileID: 843403207}
   - {fileID: 201574607}
   - {fileID: 94592011}
+  - {fileID: 1270582526}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!82 &463419759
@@ -583,6 +585,81 @@ MonoBehaviour:
   - 0.5
   success: 0
   inactivityTimeout: 5
+--- !u!1 &764520012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 764520013}
+  - 33: {fileID: 764520016}
+  - 64: {fileID: 764520015}
+  - 23: {fileID: 764520014}
+  m_Layer: 0
+  m_Name: Quad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &764520013
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764520012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.0416095, y: 2.0197453, z: 2.0197453}
+  m_Children: []
+  m_Father: {fileID: 1270582526}
+  m_RootOrder: 0
+--- !u!23 &764520014
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764520012}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 45fa28399219fda4b902f8bd7cfe150c, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!64 &764520015
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764520012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &764520016
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 764520012}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &843403206
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +883,12 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 329000
   success: 0
+  inactivityTimeout: 5
+  hidden: 1
+  averageDelta:
+    serializedVersion: 2
+    rgba: 657930
+  averageCount: 3
   manager: {fileID: 463419756}
 --- !u!1 &1009761260
 GameObject:
@@ -1004,6 +1087,59 @@ MonoBehaviour:
   - 0.2
   success: 0
   inactivityTimeout: 5
+--- !u!1 &1270582525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1270582526}
+  - 114: {fileID: 1270582527}
+  m_Layer: 0
+  m_Name: CameraMove
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1270582526
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270582525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 764520013}
+  m_Father: {fileID: 463419758}
+  m_RootOrder: 10
+--- !u!114 &1270582527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1270582525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb4952454a4440e9a262719e36e103e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererForCamera: {fileID: 764520014}
+  checkTimer: 1
+  darkTolerance:
+    serializedVersion: 2
+    rgba: 329000
+  success: 0
+  inactivityTimeout: 2
+  hidden: 0
+  averageDelta:
+    serializedVersion: 2
+    rgba: 657930
+  averageCount: 3
+  manager: {fileID: 463419756}
 --- !u!1 &1693762517
 GameObject:
   m_ObjectHideFlags: 0
