@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
         _step++;
         if (_step>=triggers.Length) {
             Debug.Log("finished");
-        } else {
+        } else if (_step<triggers.Length) {
            _anim.SetTrigger(triggers[_step]);            
         }
     }
@@ -31,13 +31,17 @@ public class GameManager : MonoBehaviour {
     public void Failed(FailType type)
     {
         Debug.Log("Failed: " + type);
-        _anim.SetTrigger(triggers[_step]);            
+        if (_step<triggers.Length) {
+            _anim.SetTrigger(triggers[_step]);            
+        }
     }
     
 	// Use this for initialization
 	void Start () {
 	   _anim = GetComponent<Animator>();
-       _anim.SetTrigger(triggers[_step]);
+       if (triggers.Length>0) {
+           _anim.SetTrigger(triggers[_step]);           
+       }
 	}
 	
 	// Update is called once per frame
