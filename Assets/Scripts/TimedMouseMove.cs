@@ -23,6 +23,12 @@ public class TimedMouseMove : MonoBehaviour {
        _startTime = Time.time;
 	}
 	
+    void OnEnabled() {
+	   _started = false;
+       _startTime = Time.time;
+       _elapsedTime = 0;
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (!_started && Vector3.Distance(_lasPosition, Input.mousePosition)>1) {
