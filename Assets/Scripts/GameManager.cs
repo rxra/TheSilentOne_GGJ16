@@ -54,6 +54,20 @@ public class GameManager : MonoBehaviour {
             }
         }
     }
+
+    public void ForceNextStep()
+    {
+        Debug.Log("Entract finished");
+        _step++;
+        if (_step >= triggers.Length)
+        {
+            Debug.Log("finished");
+        }
+        else if (_step < triggers.Length)
+        {
+            _anim.SetTrigger(triggers[_step]);
+        }
+    }
     
 	// Use this for initialization
 	void Start () {
