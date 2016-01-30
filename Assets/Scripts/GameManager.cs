@@ -3,6 +3,11 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+    public enum FailType
+    {
+        Fail1    
+    }
+
     public enum SuccessType
     {
         Success1    
@@ -21,6 +26,12 @@ public class GameManager : MonoBehaviour {
         } else {
            _anim.SetTrigger(triggers[_step]);            
         }
+    }
+    
+    public void Failed(FailType type)
+    {
+        Debug.Log("Failed: " + type);
+        _anim.SetTrigger(triggers[_step]);            
     }
     
 	// Use this for initialization
