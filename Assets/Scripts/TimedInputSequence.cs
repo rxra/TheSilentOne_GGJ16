@@ -23,14 +23,17 @@ public class TimedInputSequence : MonoBehaviour {
     private float _elapsedTimeStep = 0;
     private float _totalTime = 0;
     private float _totalElapsedTime = 0;
-    
-	// Use this for initialization
-	void Start () {
-	   _started = false;
-       foreach(var step in steps) {
-           _totalTime += step;
-       }
-	}
+
+    // Use this for initialization
+    void Start()
+    {
+        _started = false;
+        foreach (var step in steps)
+        {
+            _totalTime += step;
+            _totalTime += epsilon;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
