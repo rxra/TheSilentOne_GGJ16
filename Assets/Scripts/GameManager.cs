@@ -11,14 +11,16 @@ public class GameManager : MonoBehaviour {
 
     public enum SuccessType
     {
-        Success1    
+        Success1
     }
     
     public string[] triggers;
     private Animator _anim;
     private int _step = 0;
     public AudioClip winSFX;
+    public AudioClip gameOverSFX;
     public AudioClip failSFX;
+    public Character character;
 
     public void Success(SuccessType type)
     {
@@ -27,7 +29,7 @@ public class GameManager : MonoBehaviour {
         _step++;
         if (_step>=triggers.Length) {
             Debug.Log("finished");
-            GetComponent<AudioSource>().PlayOneShot(winSFX);
+            GetComponent<AudioSource>().PlayOneShot(gameOverSFX);
         }
         else if (_step<triggers.Length)
         {
