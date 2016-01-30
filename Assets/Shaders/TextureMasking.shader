@@ -3,7 +3,7 @@
         _MainTex ("Main", 2D) = "white" {}
         _MaskTex ("Mask", 2D) = "white" {}
     }
- 
+
     SubShader {
         Tags {"Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent"}
         ZWrite Off
@@ -15,24 +15,24 @@
             #pragma fragment frag
             #pragma fragmentoption ARB_precision_hint_fastest
             #include "UnityCG.cginc"
- 
+
             uniform sampler2D _MainTex;
             uniform sampler2D _MaskTex;
             uniform float4 _MainTex_ST;
             uniform float4 _MaskTex_ST;
- 
+
             struct app2vert
             {
                 float4 position: POSITION;
                 float2 texcoord: TEXCOORD0;
             };
- 
+
             struct vert2frag
             {
                 float4 position: POSITION;
                 float2 texcoord: TEXCOORD0;
             };
- 
+
             vert2frag vert(app2vert input)
             {
                 vert2frag output;
@@ -40,7 +40,7 @@
                 output.texcoord = TRANSFORM_TEX(input.texcoord, _MainTex);
                 return output;
             }
- 
+
             fixed4 frag(vert2frag input) : COLOR
             {
                 fixed4 main_color = tex2D(_MainTex, input.texcoord);
