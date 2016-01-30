@@ -37,6 +37,7 @@ public class Ritual : MonoBehaviour {
        foreach(var go in checkers) {
            go.SetActive(false);
        }
+       checkers[0].SetActive(true);
 	}
 	
 	// Update is called once per frame
