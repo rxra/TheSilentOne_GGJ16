@@ -10,6 +10,7 @@ public class TestWebCam : MonoBehaviour {
     public bool hidden = true;
     public Color32 averageDelta = new Color32(10,10,10,0);
     public int averageCount = 3;
+    public GameObject meshRenderer;
 
     private Color32[] _data;
     private float _elapsedTime = 0;
@@ -33,6 +34,7 @@ public class TestWebCam : MonoBehaviour {
         _elapsedTime = 0;
         _firstAverage = false;
        _startTime = Time.time;
+        meshRenderer.SetActive(true);
     }
 
 	void Update () {
