@@ -40,16 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Character
-    uniqueID: 2272029049
-    locked: 0
+    locked: 1
   - name: Background
     uniqueID: 184153119
-    locked: 0
+    locked: 1
+  - name: Character
+    uniqueID: 2272029049
+    locked: 1
   - name: PuppetBones
     uniqueID: 2068807289
-    locked: 0
+    locked: 1
   - name: PuppetRigs
     uniqueID: 4027557133
     locked: 0
+  - name: Overlay
+    uniqueID: 3508619345
+    locked: 1
