@@ -9,6 +9,8 @@ public class TestWebCam : MonoBehaviour {
     public GameManager.SuccessType success;
     public float inactivityTimeout = 5;
     public bool hidden = true;
+    public Color32 averageDelta = new Color32(10,10,10,0);
+    public int averageCount = 3;
 
     private string _deviceName;
     private Color32[] _data;
@@ -18,6 +20,9 @@ public class TestWebCam : MonoBehaviour {
     private bool _hidden = false;
     private float _totalElapsedTime = 0;
     private float _startTime = 0;
+    private Color32 _lastAverage;
+    private bool _firstAverage = false;
+    private int _average = 0;
 
     public GameManager manager;
 
@@ -26,6 +31,7 @@ public class TestWebCam : MonoBehaviour {
 	}
 	
     void OnEnable() {
+        _firstAverage = false;
        _startTime = Time.time;
         _totalElapsedTime = 0;
         foreach(var wcam in WebCamTexture.devices) {
@@ -69,6 +75,28 @@ public class TestWebCam : MonoBehaviour {
     
     private void CheckCameraMove()
     {
+        Color32 averageColor = getAverage();
+        if (_firstAverage) {
+           int dr = Mathf.Abs(_lastAverage.r - averageColor.r);
+           int dg = Mathf.Abs(_lastAverage.g - averageColor.g);
+           int db = Mathf.Abs(_lastAverage.b - averageColor.b);
+           Debug.Log(averageColor);
+           Debug.Log("delta " + dr + " " + dg + " " +db);
+       
+           _lastAverage = averageColor;
+           
+           if (dr>averageDelta.r && dg>averageDelta.g && db>averageDelta.b) {
+               _average++;
+               if (_average==averageCount) {
+                   Debug.Log("OK: CameraMove");
+                  gameObject.SetActive(false);
+                  manager.Success(success);   
+               }
+           }
+        } else {
+            _firstAverage = true;
+           _lastAverage = averageColor;
+        }
     }
     
     private void CheckHidden()
@@ -86,6 +114,13 @@ public class TestWebCam : MonoBehaviour {
     
     private bool isWebcamHidden()
     {
+       Color32 averageColor = getAverage();
+         
+       return (averageColor.r < darkTolerance.r && averageColor.g < darkTolerance.g && averageColor.b < darkTolerance.b) ? true : false;
+    }
+    
+    private Color32 getAverage()
+    {
         long sumR = 0;
         long sumG = 0;
         long sumB = 0;
@@ -100,9 +135,7 @@ public class TestWebCam : MonoBehaviour {
             (byte)(sumG / _data.Length),
             (byte)(sumB / _data.Length),
             0);
-       
-       //Debug.Log(averageColor);
-         
-       return (averageColor.r < darkTolerance.r && averageColor.g < darkTolerance.g && averageColor.b < darkTolerance.b) ? true : false;
+            
+        return averageColor;
     }
 }
