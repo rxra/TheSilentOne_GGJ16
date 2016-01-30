@@ -3,7 +3,6 @@ using System.Collections;
 
 public class TestWebCam : MonoBehaviour {
 
-    public Renderer rendererForCamera;
     public float checkTimer = 1;
     public Color32 darkTolerance = new Color32(40,5,5,0);
     public GameManager.SuccessType success;
@@ -12,13 +11,10 @@ public class TestWebCam : MonoBehaviour {
     public Color32 averageDelta = new Color32(10,10,10,0);
     public int averageCount = 3;
 
-    private string _deviceName;
     private Color32[] _data;
-    private WebCamTexture _webcam;
     private float _elapsedTime = 0;
     private bool _initialized = false;
     private bool _hidden = false;
-    private float _totalElapsedTime = 0;
     private float _startTime = 0;
     private Color32 _lastAverage;
     private bool _firstAverage = false;
@@ -28,15 +24,7 @@ public class TestWebCam : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        foreach (var wcam in WebCamTexture.devices)
-        {
-            _deviceName = wcam.name;
-            _webcam = new WebCamTexture(_deviceName, 128, 72);
-            rendererForCamera.material.mainTexture = _webcam;
-            _webcam.Play();
-            _elapsedTime = 0;
-            break;
-        }
+        _elapsedTime = 0;
     }
 	
     void OnEnable()
@@ -44,20 +32,18 @@ public class TestWebCam : MonoBehaviour {
         _elapsedTime = 0;
         _firstAverage = false;
        _startTime = Time.time;
-        _totalElapsedTime = 0;
-        
     }
 
 	void Update () {
-        if (!_initialized && _webcam.didUpdateThisFrame) {
-            _data = new Color32[_webcam.width * _webcam.height];
+        if (!_initialized && WebCamManager.Texture().didUpdateThisFrame) {
+            _data = new Color32[WebCamManager.Texture().width * WebCamManager.Texture().height];
             _initialized = true;
         } else {
             _elapsedTime += Time.deltaTime;
         
-            if (_webcam.didUpdateThisFrame && _elapsedTime>checkTimer) {
+            if (WebCamManager.Texture().didUpdateThisFrame && _elapsedTime>checkTimer) {
                 _elapsedTime = 0;
-                _webcam.GetPixels32(_data);
+                WebCamManager.Texture().GetPixels32(_data);
                 if (hidden) {
                     CheckHidden();                    
                 } else {
@@ -88,8 +74,6 @@ public class TestWebCam : MonoBehaviour {
                _average++;
                if (_average==averageCount) {
                    Debug.Log("OK: CameraMove");
-                    _webcam.Stop();
-                    _webcam = null;
                     gameObject.SetActive(false);
                   manager.Success(success);   
                }
