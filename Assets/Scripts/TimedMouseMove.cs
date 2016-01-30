@@ -24,7 +24,6 @@ public class TimedMouseMove : MonoBehaviour {
 	
     void OnEnable()
     { 
-        Debug.Log("cocuou");
 	   _lasPosition = Input.mousePosition;
 	   _started = false;
        _startTime = Time.time;

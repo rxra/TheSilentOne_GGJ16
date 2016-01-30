@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour {
     public void Failed(FailType type)
     {
         Debug.Log("Failed: " + type);
-        _anim.SetTrigger("SequenceFinished");
         if (_step<triggers.Length)
         {
             switch (type)
