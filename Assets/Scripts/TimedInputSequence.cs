@@ -17,7 +17,6 @@ public class TimedInputSequence : MonoBehaviour {
     public float epsilon = 0.2f;
     public float[] steps;
     public GameManager.SuccessType success;
-    public GameManager.FailType fail;
     public float inactivityTimeout = 5;
     
     private bool _started = false;
@@ -61,7 +60,7 @@ public class TimedInputSequence : MonoBehaviour {
                } else {
                    Debug.Log("step " + _step + " FAILED (" + _elapsedTimeStep + " " + steps[_step] + ")");
                    _started = false;
-                   manager.Failed(fail);
+                   manager.Failed(GameManager.FailType.Error);
                    gameObject.SetActive(false);
                }
            }
@@ -69,13 +68,13 @@ public class TimedInputSequence : MonoBehaviour {
            if (_totalElapsedTime > (_totalTime + epsilon)) {
                Debug.Log("TOTAL TIME FAILED (" + _totalElapsedTime + " " + _totalTime + ")");               
                _started = false;
-               manager.Failed(fail);
+               manager.Failed(GameManager.FailType.Error);
                gameObject.SetActive(false);
            }
        } else if ((Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
            _started = false;
-           manager.Failed(fail);
+           manager.Failed(GameManager.FailType.TooLong);
            gameObject.SetActive(false);
        }
 	}
