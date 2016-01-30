@@ -6,16 +6,19 @@ public class TestWebCam : MonoBehaviour {
     public Renderer rendererForCamera;
     public float checkTimer = 1;
     public Color32 darkTolerance = new Color32(40,5,5,0);
-    
+    public GameManager.SuccessType success;
+
     private string _deviceName;
     private Color32[] _data;
     private WebCamTexture _webcam;
     private float _elapsedTime = 0;
     private bool _initialized = false;
     private bool _hidden = false;
-    
-	// Use this for initialization
-	void Start () {
+
+    public GameManager manager;
+
+    // Use this for initialization
+    void Start () {
         foreach(var wcam in WebCamTexture.devices) {
             _deviceName = wcam.name;
             _webcam = new WebCamTexture(_deviceName, 128, 72);
@@ -40,7 +43,9 @@ public class TestWebCam : MonoBehaviour {
                 _webcam.GetPixels32(_data);
                 if (!_hidden && isWebcamHidden()) {
                     _hidden = true;
-                    Debug.Log("HIDDENNNNNNNNNN");
+                    Debug.Log("OK: Hidden");
+                    gameObject.SetActive(false);
+                    manager.Success(success);
                 } else if (_hidden && !isWebcamHidden()) {
                     _hidden = false;
                     Debug.Log("ok");
