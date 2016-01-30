@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
     public void Success(SuccessType type)
     {
         Debug.Log("Success: " + type);
+        _anim.SetTrigger("SequenceFinished");
         _step++;
         if (_step>=triggers.Length) {
             Debug.Log("finished");
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour {
     public void Failed(FailType type)
     {
         Debug.Log("Failed: " + type);
+        _anim.SetTrigger("SequenceFinished");
         if (_step<triggers.Length)
         {
             switch (type)

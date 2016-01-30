@@ -23,7 +23,9 @@ public class TimedMouseMove : MonoBehaviour {
        _startTime = Time.time;
 	}
 	
-    void OnEnable() {
+    void OnEnable()
+    { 
+        Debug.Log("cocuou");
 	   _lasPosition = Input.mousePosition;
 	   _started = false;
        _startTime = Time.time;
@@ -46,12 +48,12 @@ public class TimedMouseMove : MonoBehaviour {
            
            if (_length>=distance) {
                Debug.Log("OK: " + _length + " " + _elapsedTime);
-               manager.Success(success);
-               gameObject.SetActive(false);
+                gameObject.SetActive(false);
+                manager.Success(success);
            } else if (_elapsedTime>duration) {
                Debug.Log("FAILED: " + _length + " " + _elapsedTime);
-               manager.Failed(fail);
-               gameObject.SetActive(false);
+                gameObject.SetActive(false);
+                manager.Failed(fail);
            }
        } else if ((Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");

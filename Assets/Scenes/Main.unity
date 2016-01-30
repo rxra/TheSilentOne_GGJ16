@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 463419756}
-  distance: 200
+  distance: 1000
   duration: 5
   success: 0
   fail: 0
