@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour {
         _step++;
         if (_step>=triggers.Length) {
             Debug.Log("finished");
+            GetComponent<AudioSource>().PlayOneShot(winSFX);
         }
         else if (_step<triggers.Length)
         {

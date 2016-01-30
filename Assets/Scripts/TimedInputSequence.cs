@@ -36,10 +36,11 @@ public class TimedInputSequence : MonoBehaviour {
        _startTime = Time.time;
 	}
 
-    void OnEnabled() {
+    void OnEnable() {
 	   _started = false;
        _startTime = Time.time;
        _elapsedTimeStep = 0;
+        _totalElapsedTime = 0;
     }
     
 	// Update is called once per frame

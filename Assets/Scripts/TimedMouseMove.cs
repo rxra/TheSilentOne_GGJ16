@@ -23,7 +23,7 @@ public class TimedMouseMove : MonoBehaviour {
        _startTime = Time.time;
 	}
 	
-    void OnEnabled() {
+    void OnEnable() {
 	   _started = false;
        _startTime = Time.time;
        _elapsedTime = 0;
