@@ -13,6 +13,7 @@ public class TimedInputSequence : MonoBehaviour {
     }
     
     public GameManager manager;
+    public Ritual ritual;
     public Type type = Type.Any;
     public float epsilon = 0.2f;
     public float[] steps;
@@ -59,30 +60,42 @@ public class TimedInputSequence : MonoBehaviour {
                    _step++;
                    if (_step==steps.Length) {
                        _started = false;
-                       manager.Success(success);
-                       gameObject.SetActive(false);
+                       if (manager!=null) {
+                            manager.Success(success);
+                           gameObject.SetActive(false);
+                       } else
+                            ritual.Success(success);
                    } else {
                        _elapsedTimeStep = 0;
                    }
                } else {
                    Debug.Log("step " + _step + " FAILED (" + _elapsedTimeStep + " " + steps[_step] + ")");
                    _started = false;
-                   manager.Failed(GameManager.FailType.Error);
-                   gameObject.SetActive(false);
+                   if (manager!=null) {
+                        manager.Failed(GameManager.FailType.Error);
+                       gameObject.SetActive(false);
+                   } else
+                        ritual.Failed(GameManager.FailType.Error);
                }
            }
            
            if (_totalElapsedTime > (_totalTime + epsilon)) {
                Debug.Log("TOTAL TIME FAILED (" + _totalElapsedTime + " " + _totalTime + ")");               
                _started = false;
-               manager.Failed(GameManager.FailType.Error);
-               gameObject.SetActive(false);
+               if (manager!=null) {
+                    manager.Failed(GameManager.FailType.Error);
+                   gameObject.SetActive(false);
+               } else
+                    ritual.Failed(GameManager.FailType.Error);
            }
        } else if ((Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
            _started = false;
-           manager.Failed(GameManager.FailType.TooLong);
-           gameObject.SetActive(false);
+           if (manager!=null) {
+               manager.Failed(GameManager.FailType.TooLong);
+               gameObject.SetActive(false);
+           } else
+               ritual.Failed(GameManager.FailType.TooLong);
        }
 	}
     

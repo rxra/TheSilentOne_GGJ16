@@ -4,6 +4,7 @@ using System.Collections;
 public class KeyboardSlide : MonoBehaviour {
 
     public GameManager manager;
+    public Ritual ritual;
     public KeyCode startLetter;
     public KeyCode endLetter;
     public int letterCount = 3;
@@ -27,15 +28,24 @@ public class KeyboardSlide : MonoBehaviour {
                 _letters[_letters.Length-1].ToString()==endLetter.ToString() && 
                 _letters.Length>=letterCount) {
                 Debug.Log("OK: " + _letters);
-                gameObject.SetActive(false);
-                manager.Success(success);
+                if (manager!=null) {
+                    gameObject.SetActive(false);
+                    manager.Success(success);
+                }
+                else {
+                    ritual.Success(success);
+                }
            }
        }
 
        if ((Time.time - _startTime) > timeout) {
            Debug.Log("timeout FAILED (" + (Time.time - _startTime) + ") "+_letters);
-           manager.Failed(GameManager.FailType.TooLong);
-           gameObject.SetActive(false);
+           if (manager!=null) {
+                manager.Failed(GameManager.FailType.TooLong);
+                gameObject.SetActive(false);
+           } else {
+                ritual.Failed(GameManager.FailType.TooLong);
+           }
        }
 	}
 }
