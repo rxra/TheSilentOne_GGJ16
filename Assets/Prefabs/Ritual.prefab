@@ -1578,6 +1578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggers:
+  - Start
   - Sequence1
   - Sequence2
   - Sequence3
@@ -1598,6 +1599,7 @@ MonoBehaviour:
   winSFX: {fileID: 8300000, guid: 0ba11329587f22542a9bebae75faa618, type: 3}
   gameOverSFX: {fileID: 8300000, guid: 25a9f9cc56c21614888f1e211a3471b2, type: 3}
   failSFX: {fileID: 8300000, guid: 1b57390ba40e81e43a25c8c080a5adb8, type: 3}
+  character: {fileID: 0}
 --- !u!114 &11452150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1932,7 +1934,7 @@ MonoBehaviour:
   steps:
   - 0.5
   - 0.5
-  success: 0
+  success: 1
   inactivityTimeout: 10
 --- !u!114 &11497098
 MonoBehaviour:

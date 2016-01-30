@@ -11,7 +11,12 @@ public class GameManager : MonoBehaviour {
 
     public enum SuccessType
     {
-        Success1
+        Default,
+        Success1,
+        Success2,
+        Success3,
+        Success4,
+        Success5
     }
     
     public string[] triggers;
@@ -22,6 +27,11 @@ public class GameManager : MonoBehaviour {
     public AudioClip failSFX;
     public Character character;
 
+    public void CharacterToc()
+    {
+        character.SetTrigger("Toc");    
+    }
+    
     public void Success(SuccessType type)
     {
         Debug.Log("Success: " + type);
@@ -34,7 +44,26 @@ public class GameManager : MonoBehaviour {
         else if (_step<triggers.Length)
         {
             GetComponent<AudioSource>().PlayOneShot(winSFX);
-            StartCoroutine(WaitAndSetTrigger(winSFX.length));
+            switch(type) {
+                case SuccessType.Success1:
+                    character.SetTrigger("Smiley1");
+                    break;
+                case SuccessType.Success2:
+                    character.SetTrigger("Smiley2");
+                    break;
+                case SuccessType.Success3:
+                    character.SetTrigger("Smiley3");
+                    break;
+                case SuccessType.Success4:
+                    character.SetTrigger("Smiley4");
+                    break;
+                case SuccessType.Success5:
+                    character.SetTrigger("Smiley5");
+                    break;
+                case SuccessType.Default:
+                    StartCoroutine(WaitAndSetTrigger(winSFX.length));
+                    break;
+            }
         }
     }
     
@@ -57,6 +86,11 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void NextStepAfterAnimEnd()
+    {
+        _anim.SetTrigger(triggers[_step]);
+    }
+    
     public void ForceNextStep()
     {
         Debug.Log("Entract finished");

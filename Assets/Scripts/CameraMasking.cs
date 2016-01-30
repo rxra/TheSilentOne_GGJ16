@@ -13,9 +13,10 @@ public class CameraMasking : MonoBehaviour
     private Vector2? newHolePosition;
     private bool _started = false;
     
-    public void StartMask()
+    public void StartMask(GameObject finger)
     {
         _started = true;
+        autoMask  = finger;
     }
     
     public void StopMask()
@@ -29,7 +30,7 @@ public class CameraMasking : MonoBehaviour
         Rect positionRect = new Rect(
             (imageLocalPosition.x - 0.5f * EraserMaterial.mainTexture.width) / imageSize.x,
             (imageLocalPosition.y - 0.5f * EraserMaterial.mainTexture.height) / imageSize.y,
-            EraserMaterial.mainTexture.width / imageSize.x,
+            EraserMaterial.mainTexture.width  / imageSize.x,
             EraserMaterial.mainTexture.height / imageSize.y
         ); //This will Generate position of eraser according to mouse position and size of eraser texture
 
@@ -56,6 +57,8 @@ public class CameraMasking : MonoBehaviour
 
     public IEnumerator Start()
     {
+        _started = false;
+        
         firstFrame = true;
         //Get Erase effect boundary area
         ScreenRect.x = Dust.GetComponent<Renderer>().bounds.min.x;
@@ -64,7 +67,7 @@ public class CameraMasking : MonoBehaviour
         ScreenRect.height = Dust.GetComponent<Renderer>().bounds.size.y;
 
         //Create new render texture for camera target texture
-        rt = new RenderTexture(Screen.width, Screen.height, 0, RenderTextureFormat.Default);
+        rt = new RenderTexture(1920, 1080, 0, RenderTextureFormat.Default);
 
         yield return rt.Create();
         Graphics.Blit(tex, rt);
@@ -83,8 +86,7 @@ public class CameraMasking : MonoBehaviour
             Rect worldRect = ScreenRect;
             if (worldRect.Contains(v)) 
             {
-                //Get MousePosition for eraser
-                newHolePosition = new Vector2(800f * (v.x - worldRect.xMin) / worldRect.width, 600f* (v.y - worldRect.yMin) / worldRect.height);
+                newHolePosition = new Vector2(1920 * (v.x - worldRect.xMin) / worldRect.width, 1080 * (v.y - worldRect.yMin) / worldRect.height);
             }
         }
         
@@ -111,7 +113,8 @@ public class CameraMasking : MonoBehaviour
         }
         //Generate GL quad according to eraser material texture
         if (newHolePosition != null) {
-            EraseBrush(new Vector2(800.0f, 600f), newHolePosition.Value);
+            //EraseBrush(new Vector2(800.0f, 600f), newHolePosition.Value);
+            EraseBrush(new Vector2(1920, 1080), newHolePosition.Value);
             newHolePosition = null;            
         }
     }
