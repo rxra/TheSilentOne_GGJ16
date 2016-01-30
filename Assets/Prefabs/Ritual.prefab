@@ -46,7 +46,7 @@ GameObject:
   - 114: {fileID: 11478970}
   - 114: {fileID: 11422880}
   m_Layer: 0
-  m_Name: Ritual2
+  m_Name: Ritual3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,6 +316,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &189458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 485814}
+  - 114: {fileID: 11409010}
+  - 114: {fileID: 11492572}
+  - 114: {fileID: 11469544}
+  - 114: {fileID: 11445160}
+  - 114: {fileID: 11456706}
+  m_Layer: 0
+  m_Name: Ritual2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &191948
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490512}
-  m_RootOrder: 11
+  m_RootOrder: 13
 --- !u!4 &403178
 Transform:
   m_ObjectHideFlags: 1
@@ -383,7 +403,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490512}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!4 &405576
 Transform:
   m_ObjectHideFlags: 1
@@ -432,7 +452,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490512}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!4 &433266
 Transform:
   m_ObjectHideFlags: 1
@@ -456,7 +476,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490512}
-  m_RootOrder: 17
+  m_RootOrder: 18
 --- !u!4 &448054
 Transform:
   m_ObjectHideFlags: 1
@@ -505,7 +525,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490512}
-  m_RootOrder: 15
+  m_RootOrder: 17
 --- !u!4 &465986
 Transform:
   m_ObjectHideFlags: 1
@@ -542,6 +562,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 490512}
   m_RootOrder: 3
+--- !u!4 &485814
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 490512}
+  m_RootOrder: 10
 --- !u!4 &485904
 Transform:
   m_ObjectHideFlags: 1
@@ -565,7 +597,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 490512}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!4 &490512
 Transform:
   m_ObjectHideFlags: 1
@@ -586,13 +618,14 @@ Transform:
   - {fileID: 459706}
   - {fileID: 405576}
   - {fileID: 493648}
+  - {fileID: 485814}
   - {fileID: 403178}
-  - {fileID: 401486}
   - {fileID: 433266}
+  - {fileID: 401486}
   - {fileID: 488512}
   - {fileID: 427348}
-  - {fileID: 464244}
   - {fileID: 485904}
+  - {fileID: 464244}
   - {fileID: 445394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1358,6 +1391,25 @@ MonoBehaviour:
   - 0.5
   success: 0
   inactivityTimeout: 5
+--- !u!114 &11409010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0feaff630ed4604a7194d63d40a0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 11451110}
+  successCount: 4
+  timeout: 20
+  checkers:
+  - {fileID: 11492572}
+  - {fileID: 11469544}
+  - {fileID: 11456706}
+  - {fileID: 11445160}
 --- !u!114 &11409462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1516,6 +1568,23 @@ MonoBehaviour:
   - 0.5
   success: 0
   inactivityTimeout: 5
+--- !u!114 &11445160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f14ad934f4264682875c6bc7b5dd435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  ritual: {fileID: 11409010}
+  distance: 5000
+  duration: 5
+  success: 0
+  inactivityTimeout: 5
 --- !u!114 &11451110
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1548,6 +1617,26 @@ MonoBehaviour:
   - Sequence18
   winSFX: {fileID: 8300000, guid: 0ba11329587f22542a9bebae75faa618, type: 3}
   failSFX: {fileID: 8300000, guid: 1b57390ba40e81e43a25c8c080a5adb8, type: 3}
+--- !u!114 &11456706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b988ebb090824d5cbc7d3e9f6abc9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  ritual: {fileID: 11409010}
+  type: 0
+  epsilon: 0.3
+  steps:
+  - 0.5
+  - 0.5
+  success: 0
+  inactivityTimeout: 5
 --- !u!114 &11466634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1613,6 +1702,24 @@ MonoBehaviour:
   averageCount: 3
   manager: {fileID: 11451110}
   ritual: {fileID: 0}
+--- !u!114 &11469544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776809d879fa84f19a037d9b42300886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  ritual: {fileID: 11409010}
+  startLetter: 108
+  endLetter: 115
+  letterCount: 7
+  timeout: 5
+  success: 0
 --- !u!114 &11478074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1646,6 +1753,26 @@ MonoBehaviour:
   ritual: {fileID: 11401106}
   distance: 5000
   duration: 5
+  success: 0
+  inactivityTimeout: 5
+--- !u!114 &11492572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b988ebb090824d5cbc7d3e9f6abc9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  ritual: {fileID: 11409010}
+  type: 0
+  epsilon: 0.3
+  steps:
+  - 0.5
+  - 0.5
   success: 0
   inactivityTimeout: 5
 --- !u!114 &11493546
