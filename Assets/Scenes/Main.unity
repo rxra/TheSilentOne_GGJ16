@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggers:
-  - Sequence1
+  - Sequence12
   - Sequence2
   - Sequence3
   - Sequence4
@@ -928,9 +928,8 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 860036144}
   type: 0
-  epsilon: 0.5
+  epsilon: 0.3
   steps:
-  - 0.5
   - 0.5
   - 0.5
   success: 0
@@ -967,6 +966,9 @@ MonoBehaviour:
   manager: {fileID: 463419756}
   successCount: 2
   timeout: 10
+  checkers:
+  - {fileID: 860036142}
+  - {fileID: 860036143}
 --- !u!1 &919565221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1605,7 +1607,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1499833525}
+  - 114: {fileID: 1499833528}
+  - 114: {fileID: 1499833527}
   - 114: {fileID: 1499833526}
+  - 114: {fileID: 1499833529}
   m_Layer: 0
   m_Name: Ritual2
   m_TagString: Untagged
@@ -1637,12 +1642,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 463419756}
-  ritual: {fileID: 0}
+  ritual: {fileID: 1499833528}
   startLetter: 108
   endLetter: 115
-  letterCount: 3
-  timeout: 10
+  letterCount: 7
+  timeout: 5
   success: 0
+--- !u!114 &1499833527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499833524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b988ebb090824d5cbc7d3e9f6abc9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  ritual: {fileID: 1499833528}
+  type: 0
+  epsilon: 0.3
+  steps:
+  - 0.5
+  - 0.5
+  success: 0
+  inactivityTimeout: 5
+--- !u!114 &1499833528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499833524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0feaff630ed4604a7194d63d40a0bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  successCount: 4
+  timeout: 20
+  checkers:
+  - {fileID: 1499833527}
+  - {fileID: 1499833526}
+  - {fileID: 1499833527}
+  - {fileID: 1499833529}
+--- !u!114 &1499833529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1499833524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f14ad934f4264682875c6bc7b5dd435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  ritual: {fileID: 1499833528}
+  distance: 5000
+  duration: 5
+  success: 0
+  inactivityTimeout: 5
 --- !u!1 &1693762517
 GameObject:
   m_ObjectHideFlags: 0
