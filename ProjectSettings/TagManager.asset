@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 184153119
     locked: 1
+  - name: Mirror
+    uniqueID: 3959329721
+    locked: 0
   - name: Character
     uniqueID: 2272029049
     locked: 1
