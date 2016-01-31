@@ -22,9 +22,7 @@ public class GameManager : MonoBehaviour {
     public string[] triggers;
     private Animator _anim;
     private int _step = 0;
-    public AudioClip winSFX;
     public AudioClip gameOverSFX;
-    public AudioClip failSFX;
     public Character character;
 
     public void CharacterToc()
@@ -48,7 +46,7 @@ public class GameManager : MonoBehaviour {
         }
         else if (_step<triggers.Length)
         {
-            GetComponent<AudioSource>().PlayOneShot(winSFX);
+            //GetComponent<AudioSource>().PlayOneShot(winSFX);
             switch(type) {
                 case SuccessType.Success1:
                     character.SetTrigger("Smiley1");
@@ -66,7 +64,7 @@ public class GameManager : MonoBehaviour {
                     character.SetTrigger("Smiley5");
                     break;
                 case SuccessType.Default:
-                    StartCoroutine(WaitAndSetTrigger(winSFX.length));
+                    _anim.SetTrigger(triggers[_step]);
                     break;
             }
         }
@@ -80,8 +78,8 @@ public class GameManager : MonoBehaviour {
             switch (type)
             {
                 case FailType.Error:
-                    GetComponent<AudioSource>().PlayOneShot(failSFX);
-                    StartCoroutine(WaitAndSetTrigger(failSFX.length));
+                    Debug.Log("Player has made an error");
+                    //_anim.SetTrigger(triggers[_step]);
                     break;
 
                 case FailType.TooLong:
