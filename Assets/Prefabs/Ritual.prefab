@@ -1309,7 +1309,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11401106}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 11451110}
   successCount: 4
-  timeout: 20
+  timeout: 15
   checkers:
   - {fileID: 11492572}
   - {fileID: 11469544}
@@ -1347,10 +1347,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 11451110}
   ritual: {fileID: 0}
-  distance: 2000
-  duration: 10
+  distance: 3000
+  duration: 5
   success: 0
-  inactivityTimeout: 5
+  inactivityTimeout: 7
 --- !u!114 &11410954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   manager: {fileID: 11451110}
   ritual: {fileID: 0}
   type: 0
-  epsilon: 0.4
+  epsilon: 0.2
   steps:
   - 0.2
   - 0.1
@@ -1388,10 +1388,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 11451110}
   ritual: {fileID: 0}
-  distance: 5000
-  duration: 5
+  distance: 3000
+  duration: 2
   success: 0
-  inactivityTimeout: 10
+  inactivityTimeout: 5
 --- !u!114 &11418672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1406,7 +1406,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11401106}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1426,7 +1426,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11401106}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1448,7 +1448,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 329000
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 10
   hidden: 0
   averageDelta:
     serializedVersion: 2
@@ -1471,7 +1471,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11401106}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1492,7 +1492,7 @@ MonoBehaviour:
   ritual: {fileID: 11467300}
   startLetter: 108
   endLetter: 115
-  letterCount: 8
+  letterCount: 7
   timeout: 5
   success: 0
 --- !u!114 &11423464
@@ -1509,12 +1509,12 @@ MonoBehaviour:
   manager: {fileID: 11451110}
   ritual: {fileID: 0}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
   success: 1
-  inactivityTimeout: 10
+  inactivityTimeout: 5
 --- !u!114 &11424400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1531,7 +1531,7 @@ MonoBehaviour:
   startLetter: 115
   endLetter: 108
   letterCount: 7
-  timeout: 10
+  timeout: 5
   success: 0
 --- !u!114 &11424784
 MonoBehaviour:
@@ -1547,7 +1547,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11467300}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11401106}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1586,8 +1586,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   ritual: {fileID: 11409010}
-  distance: 5000
-  duration: 5
+  distance: 3000
+  duration: 2
   success: 0
   inactivityTimeout: 5
 --- !u!114 &11449676
@@ -1662,7 +1662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   ritual: {fileID: 11464444}
-  distance: 5000
+  distance: 3000
   duration: 5
   success: 0
   inactivityTimeout: 20
@@ -1680,7 +1680,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11409010}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1721,7 +1721,7 @@ MonoBehaviour:
   manager: {fileID: 11451110}
   ritual: {fileID: 0}
   type: 0
-  epsilon: 0.5
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1730,7 +1730,7 @@ MonoBehaviour:
   - 0.5
   - 0.5
   success: 2
-  inactivityTimeout: 10
+  inactivityTimeout: 5
 --- !u!114 &11467300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 11451110}
   successCount: 2
-  timeout: 10
+  timeout: 5
   checkers:
   - {fileID: 11424784}
   - {fileID: 11423436}
@@ -1789,7 +1789,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 329000
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 10
   hidden: 1
   averageDelta:
     serializedVersion: 2
@@ -1830,7 +1830,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11464444}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1852,7 +1852,7 @@ MonoBehaviour:
   startLetter: 108
   endLetter: 115
   letterCount: 7
-  timeout: 10
+  timeout: 5
   success: 0
 --- !u!114 &11478970
 MonoBehaviour:
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   ritual: {fileID: 11401106}
-  distance: 5000
+  distance: 3000
   duration: 5
   success: 0
   inactivityTimeout: 20
@@ -1903,7 +1903,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11464444}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1941,7 +1941,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11409010}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
@@ -1979,12 +1979,12 @@ MonoBehaviour:
   manager: {fileID: 11451110}
   ritual: {fileID: 0}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5
   success: 0
-  inactivityTimeout: 10
+  inactivityTimeout: 5
 --- !u!114 &11497098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1999,7 +1999,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   ritual: {fileID: 11464444}
   type: 0
-  epsilon: 0.3
+  epsilon: 0.1
   steps:
   - 0.5
   - 0.5

@@ -83,10 +83,10 @@ public class TimedInputSequence : MonoBehaviour {
                Debug.Log("TOTAL TIME FAILED (" + _totalElapsedTime + " " + _totalTime + ")");               
                _started = false;
                if (manager!=null) {
-                    manager.Failed(GameManager.FailType.Error);
+                    manager.Failed(GameManager.FailType.TooLong);
                    gameObject.SetActive(false);
                } else
-                    ritual.Failed(GameManager.FailType.Error);
+                    ritual.Failed(GameManager.FailType.TooLong);
            }
        } else if (manager!=null && (Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
