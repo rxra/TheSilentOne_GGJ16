@@ -34,7 +34,20 @@ public class GameManager : MonoBehaviour {
     {
         character.SetTrigger("SlideLetters");    
     }
-    
+
+    public void CharacterSlideLeft()
+    {
+        character.SetTrigger("SlideLeft");
+    }
+    public void CharacterSlideRight()
+    {
+        character.SetTrigger("SlideRight");
+    }
+    public void MistOff()
+    {
+        character.SetTrigger("MistOff");
+    }
+
     public void Success(SuccessType type)
     {
         Debug.Log("Success: " + type);
