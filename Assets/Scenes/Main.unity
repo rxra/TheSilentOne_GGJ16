@@ -336,6 +336,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+      propertyPath: drawingSounds.Array.size
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 490748, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -943,7 +947,39 @@ Prefab:
     - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
       propertyPath: drawingSound
       value: 
-      objectReference: {fileID: 8300000, guid: 8d5b53d33d4369d4e84bd3c87768a207, type: 3}
+      objectReference: {fileID: 8300000, guid: 8c5f8435c9d342049829743035fed66d, type: 3}
+    - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+      propertyPath: drawingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: b20cbc6065e28014fb83ba06d3581a9d, type: 3}
+    - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+      propertyPath: drawingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c5f8435c9d342049829743035fed66d, type: 3}
+    - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+      propertyPath: drawingSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b7801262a515454d883c537a23ea715, type: 3}
+    - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+      propertyPath: drawingSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6acbd7bad3b556349a6dcb8cb8285bfc, type: 3}
+    - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+      propertyPath: drawingSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: dabb33da628a5e742a0a54381fcb0c55, type: 3}
+    - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+      propertyPath: drawingSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 07411b91be5afce4e9b135f437ad15a6, type: 3}
+    - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+      propertyPath: drawingSounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: b085914d0c611cf46a86bc69165f37b1, type: 3}
+    - target: {fileID: 11425836, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+      propertyPath: drawingSounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: ae0a77df8c9cf08468646ea5f0d22eaf, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
   m_IsPrefabParent: 0
