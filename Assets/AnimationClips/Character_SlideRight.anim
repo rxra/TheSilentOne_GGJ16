@@ -2432,28 +2432,28 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0.55
-    functionName: 
+    functionName: StartDrawingLeft
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.25
-    functionName: 
+    functionName: StopDrawing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.5
-    functionName: 
+    functionName: StartDrawingLeft
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.95
-    functionName: 
+    functionName: StopDrawing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
