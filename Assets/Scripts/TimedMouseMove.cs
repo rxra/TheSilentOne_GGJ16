@@ -52,14 +52,14 @@ public class TimedMouseMove : MonoBehaviour {
                     manager.Success(success);
                 } else
                     ritual.Success(success);
-           } else if (_elapsedTime>duration) {
+           }/* else if (_elapsedTime>duration) {
                Debug.Log("FAILED: " + _length + " " + _elapsedTime);
                 if (manager!=null) {
                     gameObject.SetActive(false);
                     manager.Failed(GameManager.FailType.Error);
                 } else
                     ritual.Failed(GameManager.FailType.Error);
-           }
+           }*/
        } else if (manager!=null && (Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
            _started = false;

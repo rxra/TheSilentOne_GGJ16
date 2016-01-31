@@ -68,7 +68,7 @@ public class TimedInputSequence : MonoBehaviour {
                    } else {
                        _elapsedTimeStep = 0;
                    }
-               } else {
+               }/* else {
                    Debug.Log("step " + _step + " FAILED (" + _elapsedTimeStep + " " + steps[_step] + ")");
                    _started = false;
                    if (manager!=null) {
@@ -76,7 +76,7 @@ public class TimedInputSequence : MonoBehaviour {
                        gameObject.SetActive(false);
                    } else
                         ritual.Failed(GameManager.FailType.Error);
-               }
+               }*/
            }
            
            if (_totalElapsedTime > (_totalTime + epsilon)) {
