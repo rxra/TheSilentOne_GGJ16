@@ -1628,7 +1628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggers:
   - Start
-  - Sequence1
+  - Sequence8
   - Sequence2
   - Sequence3
   - Sequence4
