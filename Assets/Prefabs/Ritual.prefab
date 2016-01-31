@@ -894,7 +894,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 605f5c145e06c2f43bd72d9f18d4f372, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1037,12 +1037,12 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 192612}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b3bb0e600ea694b428fb718938641401, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1185,7 +1185,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 113970}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b3bb0e600ea694b428fb718938641401, type: 3}
@@ -1295,6 +1295,7 @@ MonoBehaviour:
   - {fileID: 11480454}
   - {fileID: 11434146}
   - {fileID: 11449676}
+  sound: {fileID: 0}
 --- !u!114 &11403798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1334,6 +1335,7 @@ MonoBehaviour:
   - {fileID: 11469544}
   - {fileID: 11456706}
   - {fileID: 11445160}
+  sound: {fileID: 0}
 --- !u!114 &11409462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1627,8 +1629,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggers:
-  - Start
-  - Sequence8
+  - Sequence12
+  - Sequence1
   - Sequence2
   - Sequence3
   - Sequence4
@@ -1705,6 +1707,7 @@ MonoBehaviour:
   - {fileID: 11452150}
   - {fileID: 11472274}
   - {fileID: 11498738}
+  sound: {fileID: 0}
 --- !u!114 &11466634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1744,6 +1747,7 @@ MonoBehaviour:
   checkers:
   - {fileID: 11424784}
   - {fileID: 11423436}
+  sound: {fileID: 0}
 --- !u!114 &11467876
 MonoBehaviour:
   m_ObjectHideFlags: 1
