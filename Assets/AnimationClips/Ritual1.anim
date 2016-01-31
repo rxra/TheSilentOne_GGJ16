@@ -65,11 +65,11 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 31
       - time: 1.3333334
-        value: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 1.35
+      - time: 2
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -128,7 +128,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.35
+    m_StopTime: 2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -193,11 +193,11 @@ AnimationClip:
         outSlope: Infinity
         tangentMode: 31
       - time: 1.3333334
-        value: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 1.35
+      - time: 2
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -250,7 +250,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.35
+  - time: 1.3333334
     functionName: CharacterSlideLeft
     data: 
     objectReferenceParameter: {fileID: 0}

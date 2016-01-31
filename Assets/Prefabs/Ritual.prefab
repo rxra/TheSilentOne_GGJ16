@@ -889,7 +889,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177004}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 605f5c145e06c2f43bd72d9f18d4f372, type: 3}
@@ -966,7 +966,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 000af4b8ebeb94006ab541f2a8b886bb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3d4fce004d37c8045909b51ca09a7c7d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1531,8 +1531,8 @@ MonoBehaviour:
   startLetter: 115
   endLetter: 108
   letterCount: 7
-  timeout: 5
-  success: 0
+  timeout: 10
+  success: 5
 --- !u!114 &11424784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1645,9 +1645,7 @@ MonoBehaviour:
   - Sequence15
   - Sequence16
   - Sequence17
-  winSFX: {fileID: 8300000, guid: 0ba11329587f22542a9bebae75faa618, type: 3}
   gameOverSFX: {fileID: 8300000, guid: 25a9f9cc56c21614888f1e211a3471b2, type: 3}
-  failSFX: {fileID: 8300000, guid: 1b57390ba40e81e43a25c8c080a5adb8, type: 3}
   character: {fileID: 0}
 --- !u!114 &11452150
 MonoBehaviour:
@@ -1727,10 +1725,8 @@ MonoBehaviour:
   - 0.5
   - 0.5
   - 0.5
-  - 0.5
-  - 0.5
   success: 2
-  inactivityTimeout: 5
+  inactivityTimeout: 7
 --- !u!114 &11467300
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1852,8 +1848,8 @@ MonoBehaviour:
   startLetter: 108
   endLetter: 115
   letterCount: 7
-  timeout: 5
-  success: 0
+  timeout: 10
+  success: 4
 --- !u!114 &11478970
 MonoBehaviour:
   m_ObjectHideFlags: 1
