@@ -1116,7 +1116,7 @@ Prefab:
       objectReference: {fileID: 794573919}
     - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
       propertyPath: triggers.Array.data[0]
-      value: Start
+      value: Sequence7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}

@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour {
                     character.SetTrigger("Smiley5");
                     break;
                 case SuccessType.Default:
+                    _anim.ResetTrigger("SequenceFinished");
                     _anim.SetTrigger(triggers[_step]);
                     break;
             }
