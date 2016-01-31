@@ -79,32 +79,32 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 7.8
+      - time: 9.966666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 7.8166666
+      - time: 9.983334
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 8.3
+      - time: 10.466666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 8.316667
+      - time: 10.483334
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 8.783334
+      - time: 10.95
         value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 8.8
+      - time: 10.966666
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -169,7 +169,7 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 9.466666
+      - time: 11.633333
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -324,32 +324,32 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 7.8
+      - time: 9.966666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 7.8166666
+      - time: 9.983334
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 8.3
+      - time: 10.466666
         value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 8.316667
+      - time: 10.483334
         value: 1
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 8.783334
+      - time: 10.95
         value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 8.8
+      - time: 10.966666
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -414,7 +414,7 @@ AnimationClip:
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 31
-      - time: 9.466666
+      - time: 11.633333
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -500,22 +500,36 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 7.8166666
+  - time: 7.1666665
+    functionName: MoveMouse
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 9.983334
     functionName: CharacterToc
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 8.316667
+  - time: 10.483334
     functionName: CharacterToc
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 8.8
+  - time: 10.966666
     functionName: CharacterToc
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 11.633333
+    functionName: HideCam
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

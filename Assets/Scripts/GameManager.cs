@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour {
     private int _step = 0;
     public AudioClip gameOverSFX;
     public Character character;
+    public Animator hearth;
 
     public void CharacterToc()
     {
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour {
     {
         Debug.Log("Success: " + type);
         _anim.SetTrigger("SequenceFinished");
+        hearth.SetTrigger("success");
         _step++;
         if (_step>=triggers.Length) {
             Debug.Log("finished");

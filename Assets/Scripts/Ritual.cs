@@ -27,6 +27,7 @@ public class Ritual : MonoBehaviour {
         }
         
         _success++;
+        manager.hearth.SetTrigger("success");
         if (_success==successCount) {
             _energyStarted = false;
             energy.SetFloat("_CutOff", 1.0f);
