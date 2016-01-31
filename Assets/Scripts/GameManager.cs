@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour {
         character.SetTrigger("Toc");    
     }
     
+    public void CharacterKeyboard()
+    {
+        character.SetTrigger("SlideLetters");    
+    }
+    
     public void Success(SuccessType type)
     {
         Debug.Log("Success: " + type);

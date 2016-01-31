@@ -2560,42 +2560,42 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0.68333334
-    functionName: 
+    functionName: StartDrawingLeft
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.73333335
-    functionName: 
+    functionName: StopDrawing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.1166667
-    functionName: 
+    functionName: StartDrawingLeft
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.1666666
-    functionName: 
+    functionName: StopDrawing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.4
-    functionName: 
+    functionName: StartDrawingLeft
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.7666667
-    functionName: 
+    functionName: StopDrawing
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
