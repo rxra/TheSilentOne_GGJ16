@@ -98,19 +98,9 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: {x: 0, y: 0, z: 0}
-        inSlope: {x: 0.0015, y: -0.013948983, z: 0}
-        outSlope: {x: 0.0015, y: -0.013948983, z: 0}
-        tangentMode: 0
-      - time: 0.6666667
-        value: {x: 0.001, y: -0.009299322, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-      - time: 1.3333334
-        value: {x: 0, y: 0, z: 0}
-        inSlope: {x: -0.0015, y: 0.013948983, z: 0}
-        outSlope: {x: -0.0015, y: 0.013948983, z: 0}
+        value: {x: -0.21, y: -4.3, z: 0}
+        inSlope: {x: 0.15749998, y: 0, z: 0}
+        outSlope: {x: 0.15749998, y: 0, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -182,6 +172,30 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: bone_Body_CTRL_GRP/bone_Body_CTRL/bone_BodyM_CTRL_GRP/bone_BodyM_CTRL/spline_ArmL_GRP/spline_Ctrl_GRP_3/spline_Ctrl_3
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.28, y: -4.3, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: bone_Body_CTRL_GRP/bone_LegL_3_CTRL_GRP/bone_LegL_3_CTRL
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: -0.28, y: -4.3, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: bone_Body_CTRL_GRP/bone_LegR_3_CTRL_GRP/bone_LegR_3_CTRL
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -223,6 +237,18 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - path: 2136979617
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 152308167
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3645944544
       attribute: 1
       script: {fileID: 0}
       classID: 4
@@ -512,19 +538,9 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
-        inSlope: 0.0015
-        outSlope: 0.0015
-        tangentMode: 10
-      - time: 0.6666667
-        value: 0.001
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 1.3333334
-        value: 0
-        inSlope: -0.0015
-        outSlope: -0.0015
+        value: -0.21
+        inSlope: 0.15749998
+        outSlope: 0.15749998
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -537,19 +553,9 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
-        inSlope: -0.013948983
-        outSlope: -0.013948983
-        tangentMode: 10
-      - time: 0.6666667
-        value: -0.009299322
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 1.3333334
-        value: 0
-        inSlope: 0.013948983
-        outSlope: 0.013948983
+        value: -4.3
+        inSlope: 3.2250001
+        outSlope: 3.2250001
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -562,16 +568,6 @@ AnimationClip:
       serializedVersion: 2
       m_Curve:
       - time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 0.6666667
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 10
-      - time: 1.3333334
         value: 0
         inSlope: 0
         outSlope: 0
@@ -851,6 +847,96 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
     path: bone_Body_CTRL_GRP/bone_Body_CTRL/bone_BodyM_CTRL_GRP/bone_BodyM_CTRL/spline_ArmL_GRP/spline_Ctrl_GRP_3/spline_Ctrl_3
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.28
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: bone_Body_CTRL_GRP/bone_LegL_3_CTRL_GRP/bone_LegL_3_CTRL
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -4.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: bone_Body_CTRL_GRP/bone_LegL_3_CTRL_GRP/bone_LegL_3_CTRL
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: bone_Body_CTRL_GRP/bone_LegL_3_CTRL_GRP/bone_LegL_3_CTRL
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.28
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: bone_Body_CTRL_GRP/bone_LegR_3_CTRL_GRP/bone_LegR_3_CTRL
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -4.3
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: bone_Body_CTRL_GRP/bone_LegR_3_CTRL_GRP/bone_LegR_3_CTRL
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: bone_Body_CTRL_GRP/bone_LegR_3_CTRL_GRP/bone_LegR_3_CTRL
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves:
