@@ -854,14 +854,6 @@ Prefab:
       propertyPath: character
       value: 
       objectReference: {fileID: 867487522}
-    - target: {fileID: 11466634, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
-      propertyPath: success
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11410954, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
-      propertyPath: success
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
   m_IsPrefabParent: 0
