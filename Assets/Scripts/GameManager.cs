@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour {
     
     public void ForceNextStep()
     {
-        Debug.Log("Entract finished");
+        Debug.Log("Force Next Step");
         _step++;
         if (_step >= triggers.Length)
         {
