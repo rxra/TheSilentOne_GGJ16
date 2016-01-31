@@ -6,9 +6,10 @@ public class Character : MonoBehaviour {
     public CameraMasking masking;
     public GameObject leftFinger;
     public GameObject rightFinger;
-    public AudioClip drawingSound;
+    public AudioClip[] drawingSounds;
     
     private Animator _anim;
+    private int soundIndex = 0;
     
     public void SetTrigger(string trigger)
     {
@@ -18,19 +19,23 @@ public class Character : MonoBehaviour {
     public void StartDrawingLeft()
     {
         masking.StartMask(leftFinger);
-        GetComponent<AudioSource>().PlayOneShot(drawingSound);
+        GetComponent<AudioSource>().PlayOneShot(drawingSounds[soundIndex]);
     }
     
     public void StartDrawingRight()
     {
         masking.StartMask(rightFinger);
-        GetComponent<AudioSource>().PlayOneShot(drawingSound);
+        GetComponent<AudioSource>().PlayOneShot(drawingSounds[soundIndex]);
     }
     
     public void StopDrawing()
     {
         masking.StopMask();
         GetComponent<AudioSource>().Stop();
+        if (soundIndex >= drawingSounds.Length - 1)
+            soundIndex = 0;
+        else
+            soundIndex++;
     }
     
 	// Use this for initialization

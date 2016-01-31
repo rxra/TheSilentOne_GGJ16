@@ -68,26 +68,26 @@ public class TimedInputSequence : MonoBehaviour {
                    } else {
                        _elapsedTimeStep = 0;
                    }
-               }/* else {
+               } else {
                    Debug.Log("step " + _step + " FAILED (" + _elapsedTimeStep + " " + steps[_step] + ")");
                    _started = false;
-                   if (manager!=null) {
+                   /*if (manager!=null) {
                         manager.Failed(GameManager.FailType.Error);
                        gameObject.SetActive(false);
                    } else
-                        ritual.Failed(GameManager.FailType.Error);
-               }*/
+                        ritual.Failed(GameManager.FailType.Error);*/
+               }
            }
            
-           /*if (_totalElapsedTime > (_totalTime + epsilon)) {
+           if (_totalElapsedTime > (_totalTime + epsilon)) {
                Debug.Log("TOTAL TIME FAILED (" + _totalElapsedTime + " " + _totalTime + ")");               
                _started = false;
-               if (manager!=null) {
+               /*if (manager!=null) {
                     manager.Failed(GameManager.FailType.TooLong);
                    gameObject.SetActive(false);
                } else
-                    ritual.Failed(GameManager.FailType.TooLong);
-           }*/
+                    ritual.Failed(GameManager.FailType.TooLong);*/
+           }
        } if (manager!=null && (Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
            _started = false;
