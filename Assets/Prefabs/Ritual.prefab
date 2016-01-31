@@ -1296,6 +1296,7 @@ MonoBehaviour:
   - {fileID: 11434146}
   - {fileID: 11449676}
   sound: {fileID: 0}
+  energy: {fileID: 2100000, guid: 9f5455ffe80384f5f8396085e917d5fc, type: 2}
 --- !u!114 &11403798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1336,6 +1337,7 @@ MonoBehaviour:
   - {fileID: 11456706}
   - {fileID: 11445160}
   sound: {fileID: 0}
+  energy: {fileID: 2100000, guid: 9f5455ffe80384f5f8396085e917d5fc, type: 2}
 --- !u!114 &11409462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1629,7 +1631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggers:
-  - Sequence12
+  - Start
   - Sequence1
   - Sequence2
   - Sequence3
@@ -1649,6 +1651,7 @@ MonoBehaviour:
   - Sequence17
   gameOverSFX: {fileID: 8300000, guid: 25a9f9cc56c21614888f1e211a3471b2, type: 3}
   character: {fileID: 0}
+  hearth: {fileID: 0}
 --- !u!114 &11452150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1708,6 +1711,7 @@ MonoBehaviour:
   - {fileID: 11472274}
   - {fileID: 11498738}
   sound: {fileID: 0}
+  energy: {fileID: 2100000, guid: 9f5455ffe80384f5f8396085e917d5fc, type: 2}
 --- !u!114 &11466634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1748,6 +1752,7 @@ MonoBehaviour:
   - {fileID: 11424784}
   - {fileID: 11423436}
   sound: {fileID: 0}
+  energy: {fileID: 2100000, guid: 9f5455ffe80384f5f8396085e917d5fc, type: 2}
 --- !u!114 &11467876
 MonoBehaviour:
   m_ObjectHideFlags: 1
