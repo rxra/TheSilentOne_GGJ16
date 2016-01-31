@@ -18,12 +18,21 @@ public class Character : MonoBehaviour {
 
     public void StartDrawingLeft()
     {
+        masking.big = false;
+        masking.StartMask(leftFinger);
+        GetComponent<AudioSource>().PlayOneShot(drawingSounds[soundIndex]);
+    }
+    
+    public void StartDrawingMegaLeft()
+    {
+        masking.big = true;
         masking.StartMask(leftFinger);
         GetComponent<AudioSource>().PlayOneShot(drawingSounds[soundIndex]);
     }
     
     public void StartDrawingRight()
     {
+        masking.big = false;
         masking.StartMask(rightFinger);
         GetComponent<AudioSource>().PlayOneShot(drawingSounds[soundIndex]);
     }

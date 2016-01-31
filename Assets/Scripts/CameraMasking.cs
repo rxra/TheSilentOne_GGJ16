@@ -9,6 +9,8 @@ public class CameraMasking : MonoBehaviour
     RenderTexture rt;
      Texture2D tex;
     public Material EraserMaterial;
+    public Material EraserMaterial2;
+    public bool big = false;
     private bool firstFrame;
     private Vector2? newHolePosition;
     private bool _started = false;
@@ -26,20 +28,22 @@ public class CameraMasking : MonoBehaviour
     
     private void EraseBrush(Vector2 imageSize, Vector2 imageLocalPosition)
     {
+        Material mat = big?EraserMaterial2:EraserMaterial;
+        
         Rect textureRect = new Rect(0.0f, 0.0f, 1.0f, 1.0f); //this will get erase material texture part
         Rect positionRect = new Rect(
-            (imageLocalPosition.x - 0.5f * EraserMaterial.mainTexture.width) / imageSize.x,
-            (imageLocalPosition.y - 0.5f * EraserMaterial.mainTexture.height) / imageSize.y,
-            EraserMaterial.mainTexture.width  / imageSize.x,
-            EraserMaterial.mainTexture.height / imageSize.y
+            (imageLocalPosition.x - 0.5f * mat.mainTexture.width) / imageSize.x,
+            (imageLocalPosition.y - 0.5f * mat.mainTexture.height) / imageSize.y,
+            mat.mainTexture.width  / imageSize.x,
+            mat.mainTexture.height / imageSize.y
         ); //This will Generate position of eraser according to mouse position and size of eraser texture
 
         //Draw Graphics Quad using GL library to render in target render texture of camera to generate effect
         GL.PushMatrix();
         GL.LoadOrtho();
-        for (int i = 0; i < EraserMaterial.passCount; i++)
+        for (int i = 0; i < mat.passCount; i++)
         {
-            EraserMaterial.SetPass(i);
+            mat.SetPass(i);
             GL.Begin(GL.QUADS);
             GL.Color(Color.white);
             GL.TexCoord2(textureRect.xMin, textureRect.yMax);

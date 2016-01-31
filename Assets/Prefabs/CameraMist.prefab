@@ -104,6 +104,8 @@ MonoBehaviour:
   Dust: {fileID: 0}
   autoMask: {fileID: 0}
   EraserMaterial: {fileID: 2100000, guid: 8c120f96e9be348068b5fd4d8bea5cb8, type: 2}
+  EraserMaterial2: {fileID: 2100000, guid: 12b72c388b21f4506975bfe89bd0c782, type: 2}
+  big: 0
 --- !u!124 &12425096
 Behaviour:
   m_ObjectHideFlags: 1
