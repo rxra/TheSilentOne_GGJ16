@@ -6,6 +6,7 @@ public class Character : MonoBehaviour {
     public CameraMasking masking;
     public GameObject leftFinger;
     public GameObject rightFinger;
+    public AudioClip drawingSound;
     
     private Animator _anim;
     
@@ -16,17 +17,20 @@ public class Character : MonoBehaviour {
 
     public void StartDrawingLeft()
     {
-        masking.StartMask(leftFinger);    
+        masking.StartMask(leftFinger);
+        GetComponent<AudioSource>().PlayOneShot(drawingSound);
     }
     
     public void StartDrawingRight()
     {
-        masking.StartMask(rightFinger);    
+        masking.StartMask(rightFinger);
+        GetComponent<AudioSource>().PlayOneShot(drawingSound);
     }
     
     public void StopDrawing()
     {
-        masking.StopMask();    
+        masking.StopMask();
+        GetComponent<AudioSource>().Stop();
     }
     
 	// Use this for initialization
