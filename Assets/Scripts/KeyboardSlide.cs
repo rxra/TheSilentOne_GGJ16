@@ -38,9 +38,12 @@ public class KeyboardSlide : MonoBehaviour {
            }
        }
 
-       if (manager!=null && (Time.time - _startTime) > timeout) {
+       if ((Time.time - _startTime) > timeout) {
            Debug.Log("timeout FAILED (" + (Time.time - _startTime) + ") "+_letters);
-           manager.Failed(GameManager.FailType.TooLong);
+           if (manager!=null)
+               manager.Failed(GameManager.FailType.TooLong);
+           else
+               ritual.Failed(GameManager.FailType.TooLong);
            gameObject.SetActive(false);
        }
 	}
