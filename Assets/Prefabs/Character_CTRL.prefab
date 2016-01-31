@@ -1456,7 +1456,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124828}
-  m_LocalRotation: {x: 2.0934014e-16, y: -1.8439907e-17, z: -0.9979424, w: -0.06411793}
+  m_LocalRotation: {x: 0.0000000026341789, y: -0.000000042146866, z: -0.99794245,
+    w: -0.06411694}
   m_LocalPosition: {x: 0, y: 1.0000001, z: -7.989056e-15}
   m_LocalScale: {x: 2.248719, y: 2.2487187, z: 2.248719}
   m_Children: []
@@ -1809,7 +1810,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190170}
-  m_LocalRotation: {x: -0.00000008429133, y: 0.000000001460787, z: -0.06411823, w: -0.9979423}
+  m_LocalRotation: {x: -0.00000012643818, y: -0.0000000011733674, z: -0.064116284,
+    w: -0.99794245}
   m_LocalPosition: {x: -0.00000012065244, y: 1.0000004, z: -4.468471e-14}
   m_LocalScale: {x: 0.94718176, y: 0.94718176, z: 0.9471817}
   m_Children:
@@ -2006,7 +2008,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134916}
-  m_LocalRotation: {x: -0.000000004672522, y: 0.00000004202755, z: -0.99996287, w: 0.008619384}
+  m_LocalRotation: {x: -0.000000004672482, y: 0.00000004202755, z: -0.99996287, w: 0.008620339}
   m_LocalPosition: {x: -0.6732179, y: -0.45006984, z: 3.0081539e-15}
   m_LocalScale: {x: 0.3975312, y: 0.39753124, z: 0.39753124}
   m_Children:
@@ -4367,8 +4369,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2022938247
+  m_SortingOrder: 3
   serializedVersion: 2
   m_Quality: 2
   m_UpdateWhenOffscreen: 1
@@ -4411,8 +4413,8 @@ SkinnedMeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -2022938247
+  m_SortingOrder: 3
   serializedVersion: 2
   m_Quality: 2
   m_UpdateWhenOffscreen: 1
