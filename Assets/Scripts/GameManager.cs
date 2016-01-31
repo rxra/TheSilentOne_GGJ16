@@ -47,6 +47,18 @@ public class GameManager : MonoBehaviour {
     {
         character.SetTrigger("MistOff");
     }
+    public void MoveMouse()
+    {
+        character.SetTrigger("MoveMouse");
+    }
+    public void MoveCam()
+    {
+        character.SetTrigger("MoveCam");
+    }
+    public void HideCam()
+    {
+        character.SetTrigger("HideCam");
+    }
 
     public void Success(SuccessType type)
     {
