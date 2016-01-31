@@ -79,7 +79,7 @@ public class TimedInputSequence : MonoBehaviour {
                }*/
            }
            
-           if (_totalElapsedTime > (_totalTime + epsilon)) {
+           /*if (_totalElapsedTime > (_totalTime + epsilon)) {
                Debug.Log("TOTAL TIME FAILED (" + _totalElapsedTime + " " + _totalTime + ")");               
                _started = false;
                if (manager!=null) {
@@ -87,8 +87,8 @@ public class TimedInputSequence : MonoBehaviour {
                    gameObject.SetActive(false);
                } else
                     ritual.Failed(GameManager.FailType.TooLong);
-           }
-       } else if (manager!=null && (Time.time - _startTime) > inactivityTimeout) {
+           }*/
+       } if (manager!=null && (Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
            _started = false;
            manager.Failed(GameManager.FailType.TooLong);
