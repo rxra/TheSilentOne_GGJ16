@@ -103,18 +103,6 @@ GameObject:
 GameObject:
   m_PrefabParentObject: {fileID: 111870, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
   m_PrefabInternal: {fileID: 860321421}
---- !u!114 &794573924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 794573919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5f06566ee2c7043afd0aaf419c19ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerName: Mirror
 --- !u!1001 &825911456
 Prefab:
   m_ObjectHideFlags: 0
@@ -204,50 +192,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 111870, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_Name
-      value: Mirror
-      objectReference: {fileID: 0}
-    - target: {fileID: 111870, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 472114, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6425500, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2396280, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_ReceiveShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2396280, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_CastShadows
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2396280, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_ReflectionProbeUsage
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2396280, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_UseLightProbes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 472114, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5.9729576
-      objectReference: {fileID: 0}
-    - target: {fileID: 472114, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.3597887
-      objectReference: {fileID: 0}
-    - target: {fileID: 472114, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 11434118, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
+      propertyPath: toActivate.Array.data[0]
+      value: 
+      objectReference: {fileID: 1616962519}
+    - target: {fileID: 11434118, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
+      propertyPath: toActivate.Array.data[1]
+      value: 
+      objectReference: {fileID: 1422687762}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5db2632142e830f409e49a4a26c39670, type: 2}
   m_IsPrefabParent: 0
@@ -1286,6 +1238,14 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c20afee7a7718420e95c25eb28328369, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1422687762 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 189496, guid: 145413a9c036c4e4fa445fa95fc9c816, type: 2}
+  m_PrefabInternal: {fileID: 867487521}
+--- !u!1 &1616962519 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 116368, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+  m_PrefabInternal: {fileID: 880000801}
 --- !u!82 &1711810096 stripped
 AudioSource:
   m_PrefabParentObject: {fileID: 8214896, guid: 5af9b90f6984b465cac531b47e6e5d47,

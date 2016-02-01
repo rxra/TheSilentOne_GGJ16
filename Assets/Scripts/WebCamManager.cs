@@ -3,17 +3,28 @@ using System.Collections;
 
 public class WebCamManager : MonoBehaviour {
 
+    public GameObject[] toActivate;
     public Renderer rendererForCamera;
     private string _deviceName;
     private static WebCamTexture _webcam;
+    private bool _initialized = false;
 
     public static WebCamTexture Texture()
     {
         return _webcam;    
     }
     
+    void Awake()
+    {
+        foreach(var go in toActivate)
+        {
+            go.SetActive(false);
+        }
+    }
+    
 	// Use this for initialization
-	void Start () {
+	void Start()
+    {
         foreach (var wcam in WebCamTexture.devices)
         {
             _deviceName = wcam.name;
@@ -28,6 +39,17 @@ public class WebCamManager : MonoBehaviour {
     {
         _webcam.Stop();
         _webcam = null;    
+    }
+    
+    void Update()
+    {
+        if (!_initialized && WebCamManager.Texture().didUpdateThisFrame) {
+            _initialized = true;
+            foreach(var go in toActivate)
+            {
+                go.SetActive(true);
+            }
+        }        
     }
     
 }
