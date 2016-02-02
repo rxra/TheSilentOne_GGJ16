@@ -33,26 +33,32 @@ public class TimedMouseMove : MonoBehaviour {
     }
 
 	// Update is called once per frame
-	void Update () {
-        if (!_started && Vector3.Distance(_lasPosition, Input.mousePosition)>1) {
-            _started = true;
-        }
-        
-        if (_started) {
-            _elapsedTime += Time.deltaTime;
-    	   _length += Vector3.Distance(_lasPosition, Input.mousePosition);
-           _lasPosition = Input.mousePosition;
-           
-           Debug.Log(_length);
-           
-           if (_length>=distance) {
-               Debug.Log("OK: " + _length + " " + _elapsedTime);
-                if (manager!=null) {
-                    gameObject.SetActive(false);
-                    manager.Success(success);
-                } else
-                    ritual.Success(success);
-           }/* else if (_elapsedTime>duration) {
+	void Update()
+	{
+		if (!_started && Vector3.Distance(_lasPosition, Input.mousePosition) > 1)
+		{
+			_started = true;
+		}
+
+		if (_started)
+		{
+			_elapsedTime += Time.deltaTime;
+			_length += Vector3.Distance(_lasPosition, Input.mousePosition);
+			_lasPosition = Input.mousePosition;
+
+			Debug.Log(_length);
+
+			if (_length >= distance)
+			{
+				Debug.Log("OK: " + _length + " " + _elapsedTime);
+				if (manager != null)
+				{
+					gameObject.SetActive(false);
+					manager.Success(success);
+				}
+				else
+					ritual.Success(success);
+			}/* else if (_elapsedTime>duration) {
                Debug.Log("FAILED: " + _length + " " + _elapsedTime);
                 if (manager!=null) {
                     gameObject.SetActive(false);
@@ -60,11 +66,20 @@ public class TimedMouseMove : MonoBehaviour {
                 } else
                     ritual.Failed(GameManager.FailType.Error);
            }*/
-       } else if (manager!=null && (Time.time - _startTime) > inactivityTimeout) {
-           Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
-           _started = false;
-           manager.Failed(GameManager.FailType.TooLong);
-           gameObject.SetActive(false);
-       }
+		}
+		else if ((Time.time - _startTime) > inactivityTimeout)
+		{
+			Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
+			_started = false;
+			if (ritual == null)
+			{
+				manager.Failed(GameManager.FailType.TooLong);
+				gameObject.SetActive(false);
+			}
+			else
+			{
+				ritual.Failed(GameManager.FailType.TooLong);
+			}
+		}
 	}
 }

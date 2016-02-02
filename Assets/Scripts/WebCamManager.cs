@@ -33,6 +33,12 @@ public class WebCamManager : MonoBehaviour {
             _webcam.Play();
             break;
         }
+		if (WebCamTexture.devices.Length == 0 || 
+			(WebCamTexture.devices.Length== 1 && WebCamTexture.devices[0].name.Contains("Virtual")))
+		{
+			Debug.Log("no webcam");
+			_webcam = null;
+		}
 	}
 	
     void Destroy()
@@ -43,13 +49,14 @@ public class WebCamManager : MonoBehaviour {
     
     void Update()
     {
-        if (!_initialized && WebCamManager.Texture().didUpdateThisFrame) {
+        if ((!_initialized && WebCamManager.Texture() == null)
+			|| !_initialized && WebCamManager.Texture().didUpdateThisFrame) {
             _initialized = true;
             foreach(var go in toActivate)
             {
                 go.SetActive(true);
             }
-        }        
+        }
     }
     
 }

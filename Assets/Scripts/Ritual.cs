@@ -5,7 +5,7 @@ public class Ritual : MonoBehaviour {
 
     public GameManager manager;
     public int successCount = 1;
-    public float timeout = 20;
+    //public float timeout = 20;
     public MonoBehaviour[] checkers; 
     public AudioSource sound;
     public Material energy;
@@ -14,6 +14,7 @@ public class Ritual : MonoBehaviour {
     private int _success = 0;
     private bool _energyStarted = false;
     private float _energyElapsedTime = 0;
+	public bool _listeningHasStarted = false;
     
     public void Success(GameManager.SuccessType success)
     {
@@ -27,7 +28,7 @@ public class Ritual : MonoBehaviour {
         }
         
         _success++;
-        manager.hearth.SetTrigger("success");
+        manager.heart.SetTrigger("success");
         if (_success==successCount) {
             _energyStarted = false;
             energy.SetFloat("_CutOff", 1.0f);
@@ -53,32 +54,46 @@ public class Ritual : MonoBehaviour {
     }
     
 	// Use this for initialization
-	void OnEnable () {
-	   _startTime = Time.time;
-       _energyElapsedTime = 0;
-       energy.SetFloat("_CutOff", 1.0f);
-       _success = 0;
-       foreach(var go in checkers) {
-           go.enabled = false;
-       }
-       checkers[0].enabled = true;
+	void OnEnable ()
+	{
+		foreach (var go in checkers)
+		{
+			go.enabled = false;
+		}
+		_listeningHasStarted = false;
+		manager.currentRitual = GetComponent<Ritual>();
+		_energyElapsedTime = 0;
+		energy.SetFloat("_CutOff", 1.0f);
+		_success = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	   if ((Time.time - _startTime) > timeout) {
-        Debug.Log("stop sound");
-           sound.Stop();
-            _energyStarted = false;
-            energy.SetFloat("_CutOff", 1.0f);
-           Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
-           manager.Failed(GameManager.FailType.TooLong);
-           gameObject.SetActive(false);
-       }
+	  // if ((Time.time - _startTime) > timeout && _listeningHasStarted)
+   //     {
+			//Debug.Log("stop sound");
+			//sound.Stop();
+			//_energyStarted = false;
+			//energy.SetFloat("_CutOff", 1.0f);
+   //         Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
+			//manager.Failed(GameManager.FailType.TooLong);
+			//gameObject.SetActive(false);
+   //    }
        
        if (_energyStarted) {
            _energyElapsedTime += Time.deltaTime;
            energy.SetFloat("_CutOff", 1.0f - Mathf.Lerp(0.0f, 1.0f, _energyElapsedTime / 40.0f));
        }
 	}
+
+    public void StartListening()
+    {
+        foreach (var go in checkers)
+        {
+            go.enabled = false;
+        }
+		_listeningHasStarted = true;
+		_startTime = Time.time;
+        checkers[0].enabled = true;
+    }
 }

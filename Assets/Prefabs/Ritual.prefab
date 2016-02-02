@@ -815,7 +815,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179436}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a448946a9ed0ef747987802430959a06, type: 3}
@@ -1111,7 +1111,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161884}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 738d18b4d1b2e7e4f92e40d69fdb405c, type: 3}
@@ -1283,7 +1283,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 11451110}
   successCount: 10
-  timeout: 40
   checkers:
   - {fileID: 11403798}
   - {fileID: 11493546}
@@ -1297,6 +1296,7 @@ MonoBehaviour:
   - {fileID: 11449676}
   sound: {fileID: 0}
   energy: {fileID: 2100000, guid: 9f5455ffe80384f5f8396085e917d5fc, type: 2}
+  _listeningHasStarted: 0
 --- !u!114 &11403798
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1316,7 +1316,7 @@ MonoBehaviour:
   - 0.5
   - 0.5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11409010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1330,7 +1330,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 11451110}
   successCount: 4
-  timeout: 15
   checkers:
   - {fileID: 11492572}
   - {fileID: 11469544}
@@ -1338,6 +1337,7 @@ MonoBehaviour:
   - {fileID: 11445160}
   sound: {fileID: 0}
   energy: {fileID: 2100000, guid: 9f5455ffe80384f5f8396085e917d5fc, type: 2}
+  _listeningHasStarted: 0
 --- !u!114 &11409462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   - 0.5
   - 0.5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11420714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1435,7 +1435,7 @@ MonoBehaviour:
   - 0.5
   - 0.5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11421600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1452,7 +1452,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 329000
   success: 0
-  inactivityTimeout: 10
+  inactivityTimeout: 5
   hidden: 0
   averageDelta:
     serializedVersion: 2
@@ -1480,7 +1480,7 @@ MonoBehaviour:
   - 0.5
   - 0.5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11423436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1576,7 +1576,7 @@ MonoBehaviour:
   - 0.5
   - 0.5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11445160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1610,7 +1610,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 329000
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
   hidden: 0
   averageDelta:
     serializedVersion: 2
@@ -1651,7 +1651,8 @@ MonoBehaviour:
   - Sequence17
   gameOverSFX: {fileID: 8300000, guid: 25a9f9cc56c21614888f1e211a3471b2, type: 3}
   character: {fileID: 0}
-  hearth: {fileID: 0}
+  heart: {fileID: 0}
+  currentRitual: {fileID: 0}
 --- !u!114 &11452150
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1668,7 +1669,7 @@ MonoBehaviour:
   distance: 3000
   duration: 5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11456706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1702,7 +1703,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 11451110}
   successCount: 5
-  timeout: 20
   checkers:
   - {fileID: 11490734}
   - {fileID: 11490984}
@@ -1712,6 +1712,7 @@ MonoBehaviour:
   - {fileID: 11498738}
   sound: {fileID: 0}
   energy: {fileID: 2100000, guid: 9f5455ffe80384f5f8396085e917d5fc, type: 2}
+  _listeningHasStarted: 0
 --- !u!114 &11466634
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1747,12 +1748,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 11451110}
   successCount: 2
-  timeout: 5
   checkers:
   - {fileID: 11424784}
   - {fileID: 11423436}
   sound: {fileID: 0}
   energy: {fileID: 2100000, guid: 9f5455ffe80384f5f8396085e917d5fc, type: 2}
+  _listeningHasStarted: 0
 --- !u!114 &11467876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1769,7 +1770,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 329000
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
   hidden: 1
   averageDelta:
     serializedVersion: 2
@@ -1794,7 +1795,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 329000
   success: 0
-  inactivityTimeout: 10
+  inactivityTimeout: 5
   hidden: 1
   averageDelta:
     serializedVersion: 2
@@ -1840,7 +1841,7 @@ MonoBehaviour:
   - 0.5
   - 0.5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11478074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1875,7 +1876,7 @@ MonoBehaviour:
   distance: 3000
   duration: 5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11480454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1892,7 +1893,7 @@ MonoBehaviour:
   startLetter: 115
   endLetter: 108
   letterCount: 7
-  timeout: 20
+  timeout: 5
   success: 0
 --- !u!114 &11490734
 MonoBehaviour:
@@ -1913,7 +1914,7 @@ MonoBehaviour:
   - 0.5
   - 0.5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11490984
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1930,7 +1931,7 @@ MonoBehaviour:
   startLetter: 108
   endLetter: 115
   letterCount: 7
-  timeout: 20
+  timeout: 5
   success: 0
 --- !u!114 &11492572
 MonoBehaviour:
@@ -1968,7 +1969,7 @@ MonoBehaviour:
   startLetter: 108
   endLetter: 115
   letterCount: 7
-  timeout: 20
+  timeout: 5
   success: 0
 --- !u!114 &11496936
 MonoBehaviour:
@@ -2009,7 +2010,7 @@ MonoBehaviour:
   - 0.5
   - 0.5
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
 --- !u!114 &11498738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2026,7 +2027,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 329000
   success: 0
-  inactivityTimeout: 20
+  inactivityTimeout: 5
   hidden: 1
   averageDelta:
     serializedVersion: 2

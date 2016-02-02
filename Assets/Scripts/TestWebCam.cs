@@ -38,13 +38,13 @@ public class TestWebCam : MonoBehaviour {
     }
 
 	void Update () {
-        if (!_initialized && WebCamManager.Texture().didUpdateThisFrame) {
+        if (!_initialized && WebCamManager.Texture() != null && WebCamManager.Texture().didUpdateThisFrame) {
             _data = new Color32[WebCamManager.Texture().width * WebCamManager.Texture().height];
             _initialized = true;
         } else {
             _elapsedTime += Time.deltaTime;
         
-            if (WebCamManager.Texture().didUpdateThisFrame && _elapsedTime>checkTimer) {
+            if (WebCamManager.Texture() != null && WebCamManager.Texture().didUpdateThisFrame && _elapsedTime>checkTimer) {
                 _elapsedTime = 0;
                 WebCamManager.Texture().GetPixels32(_data);
                 if (hidden) {
@@ -54,40 +54,64 @@ public class TestWebCam : MonoBehaviour {
                 }
             }
         }
-        if (manager!=null && (Time.time - _startTime) > inactivityTimeout) {
-           Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
-           manager.Failed(GameManager.FailType.TooLong);
-           gameObject.SetActive(false);
-       }
-    }
+		if ((Time.time - _startTime) > inactivityTimeout)
+		{
+			if (WebCamManager.Texture() == null)
+			{
+				Debug.Log("no camera, win instead of loosing");
+				if (manager != null)
+				{
+					gameObject.SetActive(false);
+					manager.Success(success);
+				}
+				else
+					ritual.Success(success);
+			}
+			Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
+			if (ritual == null)
+			{
+				manager.Failed(GameManager.FailType.TooLong);
+				gameObject.SetActive(false);
+			}
+			else
+			{
+				ritual.Failed(GameManager.FailType.TooLong);
+			}
+		}
+	}
     
     private void CheckCameraMove()
-    {
-        Color32 averageColor = getAverage();
-        if (_firstAverage) {
-           int dr = Mathf.Abs(_lastAverage.r - averageColor.r);
-           int dg = Mathf.Abs(_lastAverage.g - averageColor.g);
-           int db = Mathf.Abs(_lastAverage.b - averageColor.b);
-           Debug.Log(averageColor);
-           Debug.Log("delta " + dr + " " + dg + " " +db);
-       
-           _lastAverage = averageColor;
-           
-           if (dr>averageDelta.r && dg>averageDelta.g && db>averageDelta.b) {
-               _average++;
-               if (_average==averageCount) {
-                   Debug.Log("OK: CameraMove");
-                    if (manager!=null) {
-                        gameObject.SetActive(false);
-                        manager.Success(success); 
-                    } else
-                        ritual.Success(success);  
-               }
-           }
-        } else {
-            _firstAverage = true;
-           _lastAverage = averageColor;
-        }
+	{
+		Color32 averageColor = getAverage();
+		if (_firstAverage)
+		{
+			int dr = Mathf.Abs(_lastAverage.r - averageColor.r);
+			int dg = Mathf.Abs(_lastAverage.g - averageColor.g);
+			int db = Mathf.Abs(_lastAverage.b - averageColor.b);
+			Debug.Log(averageColor);
+			Debug.Log("delta " + dr + " " + dg + " " + db);
+
+			_lastAverage = averageColor;
+
+			if (dr > averageDelta.r && dg > averageDelta.g && db > averageDelta.b)
+				_average++;
+			if (_average == averageCount )
+			{
+				Debug.Log("OK: CameraMove");
+				if (manager != null)
+				{
+					gameObject.SetActive(false);
+					manager.Success(success);
+				}
+				else
+					ritual.Success(success);
+			}
+		}
+		else
+		{
+			_firstAverage = true;
+			_lastAverage = averageColor;
+		}
     }
     
     private void CheckHidden()

@@ -88,11 +88,18 @@ public class TimedInputSequence : MonoBehaviour {
                 } else
                      ritual.Failed(GameManager.FailType.TooLong);*/
             }
-        } if (manager!=null && (Time.time - _startTime) > inactivityTimeout) {
+        } if ((Time.time - _startTime) > inactivityTimeout) {
            Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
            _started = false;
-           manager.Failed(GameManager.FailType.TooLong);
-           gameObject.SetActive(false);
+			if (ritual == null)
+			{
+				manager.Failed(GameManager.FailType.TooLong);
+				gameObject.SetActive(false);
+			}
+			else
+			{
+				ritual.Failed(GameManager.FailType.TooLong);
+			}
        }
 	}
     

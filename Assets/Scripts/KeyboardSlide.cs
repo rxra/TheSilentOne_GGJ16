@@ -20,28 +20,41 @@ public class KeyboardSlide : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-	   if(Input.anyKeyDown && !Input.GetMouseButton(0) && !Input.GetMouseButton(1)) {
+	void Update ()
+	{
+	   if(Input.anyKeyDown && !Input.GetMouseButton(0) && !Input.GetMouseButton(1))
+		{
            _letters += Input.inputString.ToUpper();
            Debug.Log(Input.inputString);
            if ( _letters[0].ToString()==startLetter.ToString() && 
                 _letters[_letters.Length-1].ToString()==endLetter.ToString() && 
-                _letters.Length>=letterCount) {
+                _letters.Length>=letterCount)	
+			{
                 Debug.Log("OK: " + _letters);
-                if (manager!=null) {
+                if (manager!=null)
+				{
                     gameObject.SetActive(false);
                     manager.Success(success);
                 }
-                else {
+                else
+				{
                     ritual.Success(success);
                 }
            }
-       }
-
-       if (manager!=null && (Time.time - _startTime) > timeout) {
-           Debug.Log("timeout FAILED (" + (Time.time - _startTime) + ") "+_letters);
-           manager.Failed(GameManager.FailType.TooLong);
-           gameObject.SetActive(false);
-       }
+		}
+	   
+		if ((Time.time - _startTime) > timeout)
+		{
+			Debug.Log("timeout FAILED (" + (Time.time - _startTime) + ") " + _letters);
+			if (ritual == null)
+			{
+				manager.Failed(GameManager.FailType.TooLong);
+				gameObject.SetActive(false);
+			}
+			else
+			{
+				ritual.Failed(GameManager.FailType.TooLong);
+			}
+		}
 	}
 }

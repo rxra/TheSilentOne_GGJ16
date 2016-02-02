@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour {
     private int _step = 0;
     public AudioClip gameOverSFX;
     public Character character;
-    public Animator hearth;
+    public Animator heart;
+    public Ritual currentRitual;
 
     public void CharacterToc()
     {
@@ -61,11 +62,16 @@ public class GameManager : MonoBehaviour {
         character.SetTrigger("HideCam");
     }
 
+    public void StartRitual()
+    {
+        currentRitual.StartListening();
+    }
+
     public void Success(SuccessType type)
     {
         Debug.Log("Success: " + type);
         _anim.SetTrigger("SequenceFinished");
-        hearth.SetTrigger("success");
+        heart.SetTrigger("success");
         _step++;
         if (_step>=triggers.Length) {
             Debug.Log("finished");
