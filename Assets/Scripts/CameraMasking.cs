@@ -59,6 +59,7 @@ public class CameraMasking : MonoBehaviour
         GL.PopMatrix();
     }
 
+    //public void Start()
     public IEnumerator Start()
     {
         _started = false;
@@ -74,7 +75,7 @@ public class CameraMasking : MonoBehaviour
         rt = new RenderTexture(1920, 1080, 0, RenderTextureFormat.Default);
 
         yield return rt.Create();
-        Graphics.Blit(tex, rt);
+        //Graphics.Blit(tex, rt);
         GetComponent<Camera>().targetTexture = rt;
 
         //Set Mask Texture to dust material to Generate Dust erase effect
@@ -94,17 +95,6 @@ public class CameraMasking : MonoBehaviour
             }
         }
         
-        /*newHolePosition = null;
-        if (Input.GetMouseButton(0)) //Check if MouseDown
-        {
-            Vector2 v = GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition);
-            Rect worldRect = ScreenRect;
-            if (worldRect.Contains(v)) 
-            {
-                //Get MousePosition for eraser
-                newHolePosition = new Vector2(800f * (v.x - worldRect.xMin) / worldRect.width, 600f* (v.y - worldRect.yMin) / worldRect.height);
-            }
-        }*/
     }
 
     public void OnPostRender()
