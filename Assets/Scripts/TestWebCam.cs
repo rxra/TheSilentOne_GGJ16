@@ -58,7 +58,7 @@ public class TestWebCam : MonoBehaviour {
 		{
 			if (WebCamManager.Texture() == null)
 			{
-				Debug.Log("no camera, win instead of loosing");
+				//Debug.Log("no camera, win instead of loosing");
 				if (manager != null)
 				{
 					gameObject.SetActive(false);
@@ -67,7 +67,7 @@ public class TestWebCam : MonoBehaviour {
 				else
 					ritual.Success(success);
 			}
-			Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
+			//Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
 			if (ritual == null)
 			{
 				manager.Failed(GameManager.FailType.TooLong);
@@ -88,8 +88,8 @@ public class TestWebCam : MonoBehaviour {
 			int dr = Mathf.Abs(_lastAverage.r - averageColor.r);
 			int dg = Mathf.Abs(_lastAverage.g - averageColor.g);
 			int db = Mathf.Abs(_lastAverage.b - averageColor.b);
-			Debug.Log(averageColor);
-			Debug.Log("delta " + dr + " " + dg + " " + db);
+			//Debug.Log(averageColor);
+			//Debug.Log("delta " + dr + " " + dg + " " + db);
 
 			_lastAverage = averageColor;
 
@@ -97,7 +97,7 @@ public class TestWebCam : MonoBehaviour {
 				_average++;
 			if (_average == averageCount )
 			{
-				Debug.Log("OK: CameraMove");
+				//Debug.Log("OK: CameraMove");
 				if (manager != null)
 				{
 					gameObject.SetActive(false);
@@ -118,7 +118,7 @@ public class TestWebCam : MonoBehaviour {
     {
         if (!_hidden && isWebcamHidden()) {
             _hidden = true;
-            Debug.Log("OK: Hidden");
+            //Debug.Log("OK: Hidden");
             if (manager!=null) {
                 gameObject.SetActive(false);
                 manager.Success(success);
@@ -127,7 +127,7 @@ public class TestWebCam : MonoBehaviour {
                 ritual.Success(success);
         } else if (_hidden && !isWebcamHidden()) {
             _hidden = false;
-            Debug.Log("ok");
+            //Debug.Log("ok");
         }
     }
     

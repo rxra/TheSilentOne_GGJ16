@@ -36,7 +36,7 @@ public class WebCamManager : MonoBehaviour {
 		if (WebCamTexture.devices.Length == 0 || 
 			(WebCamTexture.devices.Length== 1 && WebCamTexture.devices[0].name.Contains("Virtual")))
 		{
-			Debug.Log("no webcam");
+			//Debug.Log("no webcam");
 			_webcam = null;
 		}
 	}

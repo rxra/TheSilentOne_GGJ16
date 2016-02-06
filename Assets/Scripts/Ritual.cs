@@ -20,7 +20,7 @@ public class Ritual : MonoBehaviour {
     {
         if (_success==0)
         {
-            Debug.Log("PLAY sound");
+            //Debug.Log("PLAY sound");
             energy.SetFloat("_CutOff", 1.0f);
             _energyElapsedTime = 0;
             sound.Play();
@@ -32,9 +32,9 @@ public class Ritual : MonoBehaviour {
         if (_success==successCount) {
             _energyStarted = false;
             energy.SetFloat("_CutOff", 1.0f);
-            Debug.Log("stop sound");
+            //Debug.Log("stop sound");
             sound.Stop();
-            Debug.Log("Ritul suceeded");
+            //Debug.Log("Ritul suceeded");
             manager.Success(success);
            gameObject.SetActive(false);
         } else {
@@ -45,7 +45,7 @@ public class Ritual : MonoBehaviour {
 
     public void Failed(GameManager.FailType fail)
     {
-        Debug.Log("stop sound");
+        //Debug.Log("stop sound");
         sound.Stop();
         _energyStarted = false;
         energy.SetFloat("_CutOff", 1.0f);

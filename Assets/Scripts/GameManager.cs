@@ -69,12 +69,12 @@ public class GameManager : MonoBehaviour {
 
     public void Success(SuccessType type)
     {
-        Debug.Log("Success: " + type);
+        //Debug.Log("Success: " + type);
         _anim.SetTrigger("SequenceFinished");
         heart.SetTrigger("success");
         _step++;
         if (_step>=triggers.Length) {
-            Debug.Log("finished");
+            //Debug.Log("finished");
             GetComponent<AudioSource>().PlayOneShot(gameOverSFX);
         }
         else if (_step<triggers.Length)
@@ -106,13 +106,13 @@ public class GameManager : MonoBehaviour {
     
     public void Failed(FailType type)
     {
-        Debug.Log("Failed: " + type);
+        //Debug.Log("Failed: " + type);
         if (_step<triggers.Length)
         {
             switch (type)
             {
                 case FailType.Error:
-                    Debug.Log("Player has made an error");
+                    //Debug.Log("Player has made an error");
                     //_anim.SetTrigger(triggers[_step]);
                     break;
 
@@ -130,11 +130,11 @@ public class GameManager : MonoBehaviour {
     
     public void ForceNextStep()
     {
-        Debug.Log("Force Next Step");
+        //Debug.Log("Force Next Step");
         _step++;
         if (_step >= triggers.Length)
         {
-            Debug.Log("finished");
+            //Debug.Log("finished");
         }
         else if (_step < triggers.Length)
         {
@@ -150,11 +150,6 @@ public class GameManager : MonoBehaviour {
        }
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     IEnumerator WaitAndSetTrigger(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);

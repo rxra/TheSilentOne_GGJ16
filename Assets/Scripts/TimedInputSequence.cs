@@ -56,7 +56,7 @@ public class TimedInputSequence : MonoBehaviour {
            _totalElapsedTime += Time.deltaTime;
            if (IsInput()) {
                if (Mathf.Abs(steps[_step]-_elapsedTimeStep) < epsilon) {
-                   Debug.Log("step " + _step + " OK (" + _elapsedTimeStep + " " + steps[_step] + ")");
+                   //Debug.Log("step " + _step + " OK (" + _elapsedTimeStep + " " + steps[_step] + ")");
                    _step++;
                    if (_step==steps.Length) {
                        _started = false;
@@ -89,7 +89,7 @@ public class TimedInputSequence : MonoBehaviour {
                      ritual.Failed(GameManager.FailType.TooLong);*/
             }
         } if ((Time.time - _startTime) > inactivityTimeout) {
-           Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
+           //Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
            _started = false;
 			if (ritual == null)
 			{

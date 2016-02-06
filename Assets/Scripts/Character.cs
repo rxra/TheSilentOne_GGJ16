@@ -51,9 +51,5 @@ public class Character : MonoBehaviour {
 	void Start () {
 	   _anim = GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
