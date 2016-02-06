@@ -9,8 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 477578}
   - 20: {fileID: 2056532}
-  - 124: {fileID: 12425096}
-  - 92: {fileID: 9249978}
   - 114: {fileID: 11421124}
   - 95: {fileID: 9505354}
   m_Layer: 0
@@ -19,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &477578
 Transform:
   m_ObjectHideFlags: 1
@@ -66,13 +64,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!92 &9249978
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129234}
-  m_Enabled: 1
 --- !u!95 &9505354
 Animator:
   serializedVersion: 3
@@ -106,20 +97,21 @@ MonoBehaviour:
   EraserMaterial: {fileID: 2100000, guid: 8c120f96e9be348068b5fd4d8bea5cb8, type: 2}
   EraserMaterial2: {fileID: 2100000, guid: 12b72c388b21f4506975bfe89bd0c782, type: 2}
   big: 0
---- !u!124 &12425096
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 129234}
-  m_Enabled: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 129234}

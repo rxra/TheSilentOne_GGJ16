@@ -9,9 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 472114}
   - 33: {fileID: 3331952}
-  - 64: {fileID: 6425500}
   - 23: {fileID: 2396280}
-  - 114: {fileID: 11484030}
   - 114: {fileID: 11446468}
   m_Layer: 0
   m_Name: Mirror
@@ -94,18 +92,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 111870}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!64 &6425500
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111870}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &11434118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,18 +108,6 @@ MonoBehaviour:
   - {fileID: 0}
   rendererForCamera: {fileID: 2396280}
 --- !u!114 &11446468
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 111870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd5f06566ee2c7043afd0aaf419c19ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layerName: Mirror
---- !u!114 &11484030
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

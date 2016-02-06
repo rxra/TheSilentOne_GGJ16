@@ -670,7 +670,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8d5b53d33d4369d4e84bd3c87768a207, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8d3bce5345f265a459bf925160ec5f0f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -818,7 +818,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a448946a9ed0ef747987802430959a06, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 30e5964475ad0384f94e521f6b10c26d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -892,7 +892,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 605f5c145e06c2f43bd72d9f18d4f372, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5c4e72b6a27e19442bee183ab8a1c5ae, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -1040,7 +1040,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b3bb0e600ea694b428fb718938641401, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 27f5f23ac4c2eaa498428623190f4c48, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -1114,7 +1114,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 738d18b4d1b2e7e4f92e40d69fdb405c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ad3c05eb6ef4f56479681deae5d1cb08, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1188,7 +1188,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b3bb0e600ea694b428fb718938641401, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 27f5f23ac4c2eaa498428623190f4c48, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 0.3
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   - Sequence15
   - Sequence16
   - Sequence17
-  gameOverSFX: {fileID: 8300000, guid: 25a9f9cc56c21614888f1e211a3471b2, type: 3}
+  gameOverSFX: {fileID: 8300000, guid: 81aafadf48eea884aa33e552ba24b185, type: 3}
   character: {fileID: 0}
   heart: {fileID: 0}
   currentRitual: {fileID: 0}
