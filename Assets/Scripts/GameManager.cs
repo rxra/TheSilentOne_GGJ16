@@ -22,13 +22,21 @@ public class GameManager : MonoBehaviour {
     public string[] triggers;
     private Animator _anim;
     private int _step = 0;
+    public AudioSource audioSource;
     public AudioClip gameOverSFX;
+    public AudioClip tocSound;
+    public AudioClip swipSound;
+    public AudioClip swipFastSound;
+    public AudioClip camHiddenSound;
+    public AudioClip camMoveSound;
+    public AudioClip keyboardSound;
     public Character character;
     public Animator heart;
     public Ritual currentRitual;
 
     public void CharacterToc()
     {
+        audioSource.PlayOneShot(tocSound);
         character.SetTrigger("Toc");    
     }
     
@@ -39,10 +47,12 @@ public class GameManager : MonoBehaviour {
 
     public void CharacterSlideLeft()
     {
+        audioSource.PlayOneShot(keyboardSound);
         character.SetTrigger("SlideLeft");
     }
     public void CharacterSlideRight()
     {
+        audioSource.PlayOneShot(keyboardSound);
         character.SetTrigger("SlideRight");
     }
     public void MistOff()
@@ -51,14 +61,22 @@ public class GameManager : MonoBehaviour {
     }
     public void MoveMouse()
     {
+        audioSource.PlayOneShot(swipSound);
+        character.SetTrigger("MoveMouse");
+    }
+    public void MoveMouse2()
+    {
+        audioSource.PlayOneShot(swipFastSound);
         character.SetTrigger("MoveMouse");
     }
     public void MoveCam()
     {
+        audioSource.PlayOneShot(camMoveSound);
         character.SetTrigger("MoveCam");
     }
     public void HideCam()
     {
+        audioSource.PlayOneShot(camHiddenSound);
         character.SetTrigger("HideCam");
     }
 
@@ -75,11 +93,11 @@ public class GameManager : MonoBehaviour {
         _step++;
         if (_step>=triggers.Length) {
             //Debug.Log("finished");
-            GetComponent<AudioSource>().PlayOneShot(gameOverSFX);
+            audioSource.PlayOneShot(gameOverSFX);
         }
         else if (_step<triggers.Length)
         {
-            //GetComponent<AudioSource>().PlayOneShot(winSFX);
+            //audioSource.PlayOneShot(winSFX);
             switch(type) {
                 case SuccessType.Success1:
                     character.SetTrigger("Smiley1");
