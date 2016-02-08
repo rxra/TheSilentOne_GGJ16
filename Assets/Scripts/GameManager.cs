@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour {
     public Ritual currentRitual;
 	public Animator EndingScene;
 
+	private bool end = false;
+
 
 	public void CharacterToc()
     {
@@ -93,6 +95,9 @@ public class GameManager : MonoBehaviour {
 
 	public void EndGame()
 	{
+		if (end)
+			return;
+		end = true;
 		EndingScene.SetTrigger("EndingScene");
 		Camera.main.GetComponent<AudioSource>().Stop();
 		audioSource.volume = 0.5f;

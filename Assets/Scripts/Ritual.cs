@@ -81,8 +81,10 @@ public class Ritual : MonoBehaviour {
    //    
        if (_energyStarted) {
            _energyElapsedTime += Time.deltaTime;
-			float cutoff = 1.0f - Mathf.Lerp(0.0f, 1.0f, _energyElapsedTime / 40.0f);
+			float cutoff = 1.0f - Mathf.Lerp(0.0f, 1.0f, _energyElapsedTime / 30.0f);
 		   energy.SetFloat("_Cutoff", cutoff);
+			if (cutoff <= 0)
+				manager.EndGame();
        }
 	}
 
