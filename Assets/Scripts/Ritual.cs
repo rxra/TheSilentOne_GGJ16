@@ -78,8 +78,7 @@ public class Ritual : MonoBehaviour {
    //         Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
 			//manager.Failed(GameManager.FailType.TooLong);
 			//gameObject.SetActive(false);
-   //    }
-       
+   //    
        if (_energyStarted) {
            _energyElapsedTime += Time.deltaTime;
            energy.SetFloat("_CutOff", 1.0f - Mathf.Lerp(0.0f, 1.0f, _energyElapsedTime / 40.0f));

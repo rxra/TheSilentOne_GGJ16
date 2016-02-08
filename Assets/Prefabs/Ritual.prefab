@@ -650,12 +650,12 @@ MonoBehaviour:
   type: 0
   epsilon: 0.2
   steps:
+  - 0.3
   - 0.2
-  - 0.1
-  - 0.1
   - 0.2
-  - 0.4
-  - 0.2
+  - 0.3
+  - 0.5
+  - 0.3
   success: 3
   inactivityTimeout: 5
 --- !u!114 &11412512
@@ -932,7 +932,7 @@ MonoBehaviour:
   gameOverSFX: {fileID: 8300000, guid: 81aafadf48eea884aa33e552ba24b185, type: 3}
   tocSound: {fileID: 8300000, guid: 3d4fce004d37c8045909b51ca09a7c7d, type: 3}
   swipSound: {fileID: 8300000, guid: 27f5f23ac4c2eaa498428623190f4c48, type: 3}
-  swipFastSound: {fileID: 8300000, guid: 27f5f23ac4c2eaa498428623190f4c48, type: 3}
+  swipFastSound: {fileID: 8300000, guid: 66d1dc929033d60468e54c5278556a61, type: 3}
   camHiddenSound: {fileID: 8300000, guid: 30e5964475ad0384f94e521f6b10c26d, type: 3}
   camMoveSound: {fileID: 8300000, guid: ad3c05eb6ef4f56479681deae5d1cb08, type: 3}
   keyboardSound: {fileID: 8300000, guid: 5c4e72b6a27e19442bee183ab8a1c5ae, type: 3}

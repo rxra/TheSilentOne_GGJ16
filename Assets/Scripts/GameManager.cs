@@ -47,12 +47,14 @@ public class GameManager : MonoBehaviour {
 
     public void CharacterSlideLeft()
     {
-        audioSource.PlayOneShot(keyboardSound);
         character.SetTrigger("SlideLeft");
     }
+	public void CharacterSlideSound()
+	{
+		audioSource.PlayOneShot(keyboardSound);
+	}
     public void CharacterSlideRight()
     {
-        audioSource.PlayOneShot(keyboardSound);
         character.SetTrigger("SlideRight");
     }
     public void MistOff()
@@ -61,14 +63,20 @@ public class GameManager : MonoBehaviour {
     }
     public void MoveMouse()
     {
-        audioSource.PlayOneShot(swipSound);
         character.SetTrigger("MoveMouse");
     }
-    public void MoveMouse2()
+	public void MoveMouseSound()
+	{
+		audioSource.PlayOneShot(swipSound);
+	}
+    public void MoveMouseFast()
     {
-        audioSource.PlayOneShot(swipFastSound);
-        character.SetTrigger("MoveMouse");
+        character.SetTrigger("MoveMouseFast");
     }
+	public void MoveMouseFastSound()
+	{
+		audioSource.PlayOneShot(swipFastSound);
+	}
     public void MoveCam()
     {
         audioSource.PlayOneShot(camMoveSound);
