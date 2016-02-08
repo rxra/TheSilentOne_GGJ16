@@ -30,11 +30,14 @@ public class GameManager : MonoBehaviour {
     public AudioClip camHiddenSound;
     public AudioClip camMoveSound;
     public AudioClip keyboardSound;
-    public Character character;
+	public AudioClip endingSound;
+	public Character character;
     public Animator heart;
     public Ritual currentRitual;
+	public Animator EndingScene;
 
-    public void CharacterToc()
+
+	public void CharacterToc()
     {
         audioSource.PlayOneShot(tocSound);
         character.SetTrigger("Toc");    
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour {
     }
 	public void CharacterSlideSound()
 	{
-		audioSource.PlayOneShot(keyboardSound);
+		//audioSource.PlayOneShot(keyboardSound);
 	}
     public void CharacterSlideRight()
     {
@@ -67,7 +70,7 @@ public class GameManager : MonoBehaviour {
     }
 	public void MoveMouseSound()
 	{
-		audioSource.PlayOneShot(swipSound);
+		//audioSource.PlayOneShot(swipSound);
 	}
     public void MoveMouseFast()
     {
@@ -75,18 +78,26 @@ public class GameManager : MonoBehaviour {
     }
 	public void MoveMouseFastSound()
 	{
-		audioSource.PlayOneShot(swipFastSound);
+		//audioSource.PlayOneShot(swipFastSound);
 	}
     public void MoveCam()
     {
-        audioSource.PlayOneShot(camMoveSound);
+        //audioSource.PlayOneShot(camMoveSound);
         character.SetTrigger("MoveCam");
     }
     public void HideCam()
     {
-        audioSource.PlayOneShot(camHiddenSound);
+        //audioSource.PlayOneShot(camHiddenSound);
         character.SetTrigger("HideCam");
     }
+
+	public void EndGame()
+	{
+		EndingScene.SetTrigger("EndingScene");
+		Camera.main.GetComponent<AudioSource>().Stop();
+		audioSource.volume = 0.5f;
+		audioSource.PlayOneShot(endingSound);
+	}
 
     public void StartRitual()
     {

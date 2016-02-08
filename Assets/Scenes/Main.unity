@@ -390,6 +390,42 @@ Prefab:
       propertyPath: meshRenderer
       value: 
       objectReference: {fileID: 794573919}
+    - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+      propertyPath: triggers.Array.data[0]
+      value: Start
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+      propertyPath: EndingScene
+      value: 
+      objectReference: {fileID: 1640368328}
+    - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+      propertyPath: endingSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7bca503ed8fe81746bcd8f0ef2cee9ac, type: 3}
+    - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+      propertyPath: keyboardSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+      propertyPath: swipSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+      propertyPath: swipFastSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+      propertyPath: camHiddenSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+      propertyPath: camMoveSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451110, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
+      propertyPath: gameOverSFX
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
   m_IsPrefabParent: 0
@@ -750,6 +786,11 @@ GameObject:
 GameObject:
   m_PrefabParentObject: {fileID: 116368, guid: 4ebf62e9f40ddc245bca5ff6acf01363, type: 2}
   m_PrefabInternal: {fileID: 880000801}
+--- !u!95 &1640368328 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9552136, guid: b59da6ca27936be4f97f0fce921a97e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1041676702}
 --- !u!82 &1711810096 stripped
 AudioSource:
   m_PrefabParentObject: {fileID: 8214896, guid: 5af9b90f6984b465cac531b47e6e5d47,

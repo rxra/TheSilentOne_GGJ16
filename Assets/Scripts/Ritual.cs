@@ -21,7 +21,7 @@ public class Ritual : MonoBehaviour {
         if (_success==0)
         {
             //Debug.Log("PLAY sound");
-            energy.SetFloat("_CutOff", 1.0f);
+            energy.SetFloat("_Cutoff", 1.0f);
             _energyElapsedTime = 0;
             sound.Play();
             _energyStarted = true;
@@ -31,7 +31,7 @@ public class Ritual : MonoBehaviour {
         manager.heart.SetTrigger("success");
         if (_success==successCount) {
             _energyStarted = false;
-            energy.SetFloat("_CutOff", 1.0f);
+            energy.SetFloat("_Cutoff", 1.0f);
             //Debug.Log("stop sound");
             sound.Stop();
             //Debug.Log("Ritul suceeded");
@@ -48,7 +48,7 @@ public class Ritual : MonoBehaviour {
         //Debug.Log("stop sound");
         sound.Stop();
         _energyStarted = false;
-        energy.SetFloat("_CutOff", 1.0f);
+        energy.SetFloat("_Cutoff", 1.0f);
         manager.Failed(fail);
         gameObject.SetActive(false);
     }
@@ -81,7 +81,8 @@ public class Ritual : MonoBehaviour {
    //    
        if (_energyStarted) {
            _energyElapsedTime += Time.deltaTime;
-           energy.SetFloat("_CutOff", 1.0f - Mathf.Lerp(0.0f, 1.0f, _energyElapsedTime / 40.0f));
+			float cutoff = 1.0f - Mathf.Lerp(0.0f, 1.0f, _energyElapsedTime / 40.0f);
+		   energy.SetFloat("_Cutoff", cutoff);
        }
 	}
 

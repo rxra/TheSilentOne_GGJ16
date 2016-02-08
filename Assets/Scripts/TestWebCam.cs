@@ -66,6 +66,8 @@ public class TestWebCam : MonoBehaviour {
 				}
 				else
 					ritual.Success(success);
+
+				return;
 			}
 			//Debug.Log("inactivity FAILED (" + (Time.time - _startTime) + ")");
 			if (ritual == null)
